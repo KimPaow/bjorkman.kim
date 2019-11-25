@@ -1,0 +1,51 @@
+@import "../../styles/responsive.scss";
+
+.three__scene {
+  height: 100vw;
+  width: 100vw;
+  position: absolute;
+  top: 40vh;
+  left: -50vw;
+  transform: translateY(-50%);
+  z-index: -1;
+  display: block;
+  // border: 1px solid red;
+
+  @include mobile {
+    height: 50vw;
+    width: 50vw;
+    top: 28vw;
+    left: 5vw;
+  }
+
+  @include tablet {
+    height: 60vw;
+    width: 60vw;
+    top: 6vw;
+    left: 0vw;
+    transform: translateY(0);
+  }
+
+  @include desktop {
+    height: 50vw;
+    width: 50vw;
+    top: 5vw;
+    left: 5vw;
+  }
+
+  @include wide-screen {
+    height: 60vh;
+    width: 60vh;
+    top: 3vw;
+    left: 5vw;
+    transform: translateY(0);
+  }
+
+  @include extra-wide-screen {
+    height: 60vh;
+    width: 60vh;
+    top: 3vw;
+    left: 5vw;
+    transform: translateY(0);
+  }
+}
