@@ -10,18 +10,9 @@
     font-size: 300px;
     position: fixed;
     margin: 0;
-    // bottom: -35%;
     bottom: 0;
     transform: translate3d(-15%, 40%, 0);
     white-space: nowrap;
-    // color: #f0f0f0;
-
-    @include tablet {
-      font-size: 500px;
-    }
-
-    @include desktop {
-    }
   }
 }
 
