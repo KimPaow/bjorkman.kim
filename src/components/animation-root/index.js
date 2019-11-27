@@ -22,7 +22,7 @@ const AnimationRoot = props => {
         <p>
           こんにちわ、
           <br />
-          キムといます。日本に働きたいです。良かったら連絡してください。
+          キムといます。良かったら連絡してください。
           <br />
           よろしくお願いします〜 &nbsp;
           <a href="https://github.com/KimPaow">
