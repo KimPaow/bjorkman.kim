@@ -1,16 +1,9 @@
 @import-normalize;
 @import "./styles/vars.scss";
 
+body,
 html {
   margin: 0px;
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  margin: 0px;
-  min-height: 100%;
-  width: 100%;
 }
 
 body {
