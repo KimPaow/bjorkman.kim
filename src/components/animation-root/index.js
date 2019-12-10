@@ -20,7 +20,7 @@ const AnimationRoot = props => {
       </div> */}
       <div className={styles.intro_container}>
         <p>
-          こんにちわ、
+          こんにちは、
           <br />
           キムといます。日本に働きたいです。良かったら連絡してください。
           <br />
