@@ -8,13 +8,13 @@ function LoadingSpinner() {
     while (true) {
       await next({
         x: 0,
-        from: { x: 15 },
-        config: config.wobbly
+        from: { x: 10 },
+        config: config.gentle
       });
       await next({
         x: 15,
         from: { x: 0 },
-        config: config.wobbly
+        config: config.gentle
       });
     }
   });
@@ -26,6 +26,7 @@ function LoadingSpinner() {
           <rect
             strokeWidth={`${anim.x}`}
             stroke={`rgba(255,255,255,${anim.x / 10})`}
+            fill="none"
             height="100%"
             width="100%"
           />
