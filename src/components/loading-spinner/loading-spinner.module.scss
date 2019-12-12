@@ -1,0 +1,11 @@
+@import "../../styles/vars.scss";
+
+.spinnerRoot {
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-color;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}

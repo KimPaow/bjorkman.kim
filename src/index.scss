@@ -1,6 +1,9 @@
 @import-normalize;
 @import "./styles/vars.scss";
 
+:root {
+  font-size: 62.5%;
+}
 body,
 html {
   margin: 0px;
@@ -24,4 +27,11 @@ code {
 a {
   color: #222;
   text-decoration: none;
+}
+
+p {
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  font-family: "Darker Grotesque", sans-serif;
 }
