@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./loading-spinner.module.scss";
-import { useSpring, animated, interpolate, config } from "react-spring";
+import { config } from "react-spring";
 import { Keyframes } from "react-spring/renderprops";
 
 function LoadingSpinner() {
