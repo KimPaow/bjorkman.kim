@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import { useTrail, useSpring, animated, config } from "react-spring";
 import LoadingSpinner from "../loading-spinner";
 import styles from "./labs.module.scss";
 
-import Parallax from "./parallax";
+import Lab1 from "./lab1";
 
 function Labs() {
   let { path, url } = useRouteMatch();
@@ -51,7 +51,7 @@ function Labs() {
   const children = [
     <li>
       <Link className={styles.link} to={`${url}/1`}>
-        Parallax
+        React-Spring
       </Link>
     </li>
   ];
@@ -85,7 +85,10 @@ function Labs() {
           >
             /la-b(ə-)rə-ˌtȯr-ē/
           </animated.p>
-          <animated.h1 style={{ ...headlineFadeSpring }}>
+          <animated.h1
+            className={styles.headline}
+            style={{ ...headlineFadeSpring }}
+          >
             Laboratory.
           </animated.h1>
           <animated.p style={{ ...introFadeSpring }} className={styles.intro}>
@@ -94,11 +97,13 @@ function Labs() {
               🤯
             </span>
           </animated.p>
-          <ul>{createExpList(children, trail)}</ul>
+          <ul className={styles.childrenlist}>
+            {createExpList(children, trail)}
+          </ul>
         </div>
       </Route>
       <Route path={`${path}/1`}>
-        <Parallax />
+        <Lab1 />
       </Route>
     </Switch>
   ) : (
