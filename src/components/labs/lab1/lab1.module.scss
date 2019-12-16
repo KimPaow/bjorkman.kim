@@ -1,0 +1,563 @@
+@import "../../../styles/vars.scss";
+@import "../../../styles/responsive.scss";
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:700&display=swap");
+
+$bg: #093cdc;
+$bg-darker: #001c70;
+$accent: #2cec82;
+$inactive: rgba(255, 255, 255, 0.2);
+$inactive_lightbg: rgba(0, 0, 0, 0.2);
+$linkSize: 1.5rem;
+$linkSize-mobile: 1.3rem;
+$zAbove: 10;
+$zMiddle: 0;
+$zBelow: -10;
+
+@mixin center($vertical: false, $horizontal: false) {
+  position: absolute;
+  @if $vertical and $horizontal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $vertical {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $horizontal {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@mixin shadow() {
+  box-shadow: 0 2.8px 2.9px rgba(0, 0, 0, 0.02),
+    0 6.7px 7px rgba(0, 0, 0, 0.028), 0 12.5px 13.1px rgba(0, 0, 0, 0.035),
+    0 22.3px 23.5px rgba(0, 0, 0, 0.042), 0 41.8px 43.9px rgba(0, 0, 0, 0.05),
+    0 100px 105px rgba(0, 0, 0, 0.07);
+}
+
+@mixin link($hasArrow: false, $fontSize: $linkSize) {
+  font-size: $linkSize-mobile;
+  color: white;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+
+  @include tablet {
+    font-size: $fontSize;
+  }
+
+  @if $hasArrow {
+    position: relative;
+    &:after {
+      content: "";
+      color: $accent;
+      background: url("arrow.svg");
+      width: 2.5rem;
+      height: 0.7rem;
+      font-weight: bold;
+      font-size: 2rem;
+      position: absolute;
+      top: 30%;
+      transform: translate(0.5rem, -50%);
+      opacity: 0;
+      transition: transform 0.3s ease-in-out, opacity 0.2s ease;
+    }
+    &:hover {
+      &:after {
+        transform: translate(1.5rem, -50%);
+        opacity: 1;
+        transition: transform 0.3s ease-in-out, opacity 0.2s ease;
+      }
+    }
+  }
+}
+
+.root {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+}
+
+.bg {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    &:nth-child(1) {
+      left: 0;
+      background: $bg;
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &:nth-child(2) {
+      right: 0;
+      background: $bg-darker;
+    }
+  }
+}
+
+.maincontent {
+  display: block;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+  position: absolute;
+
+  @include tablet {
+    position: absolute;
+    top: 4rem;
+    padding: 0;
+  }
+}
+
+.logo {
+  margin-left: 2rem;
+  font-size: 3rem;
+  color: $accent;
+
+  @include tablet {
+    margin-left: 4rem;
+    font-size: 4rem;
+  }
+}
+
+.header {
+  @include link;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    right: 3rem;
+  }
+
+  li {
+    display: none;
+    position: relative;
+    margin-right: 2rem;
+
+    &:last-child {
+      display: inline-flex;
+    }
+
+    @include tablet {
+      margin-right: 4rem;
+      display: inline-flex;
+    }
+
+    a {
+      color: white;
+    }
+
+    .hamburger {
+      background: none;
+      height: 3rem;
+      width: 3rem;
+      margin: 0 0 0 3rem;
+      padding: 0;
+      display: inline-block;
+      align-self: center;
+      border: none;
+      position: relative;
+
+      &:hover {
+        .hamburgerItem {
+          width: 60%;
+          transition: all 0.3s ease-in-out;
+
+          &:nth-child(2) {
+            width: 100%;
+          }
+        }
+      }
+
+      .hamburgerItem {
+        position: absolute;
+        left: 0;
+        top: 30%;
+        width: 100%;
+        height: 0.3rem;
+        background: $accent;
+        display: inline-block;
+        margin: 0.1rem 0;
+        border-radius: 0.3rem;
+        transition: all 0.3s ease-in-out;
+
+        &:nth-child(2) {
+          width: 60%;
+          top: 60%;
+        }
+      }
+    }
+  }
+}
+
+.hero_container {
+  height: calc(100vh - 75px);
+  padding-top: 75px;
+  width: 100%;
+
+  @include tablet {
+    height: 100vh;
+    padding-top: 0;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+
+  @include tablet {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.textContent {
+  display: inline-block;
+  grid-column: 2 / 12;
+  margin-top: 3rem;
+  pointer-events: none;
+
+  @include tablet {
+    grid-column: 2 / 9;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+    color: #fff;
+    display: block;
+    letter-spacing: -0.2rem;
+    margin-top: 0;
+
+    @include tablet {
+      font-size: 7rem;
+    }
+
+    @include wide-screen {
+      font-size: 9rem;
+    }
+
+    span {
+      color: transparent;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $accent;
+    }
+  }
+
+  .textContentLink {
+    @include link($hasArrow: true);
+    padding: 0 1rem 1rem 1rem;
+    transition: padding 0.3s ease-in-out;
+    pointer-events: initial;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0.2rem;
+      background: white;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      padding: 0 4rem 1rem 1rem;
+      transition: padding 0.3s ease-in-out;
+    }
+  }
+}
+
+.mainImg {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+
+  @include tablet {
+    mix-blend-mode: multiply;
+  }
+
+  &_container {
+    @include shadow();
+    grid-column: 1 / 11;
+    height: 45vh;
+    width: 100%;
+
+    @include tablet {
+      height: 60vh;
+      grid-column: 5 / 11;
+      @include center($vertical: true);
+      width: calc(100% + 4.2vw);
+      z-index: $zBelow;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 100%;
+        background-color: rgba(44, 236, 130, 1);
+        transition: right 0.3s ease-in-out;
+      }
+    }
+
+    &:hover {
+      &:before {
+        right: 0;
+        transition: right 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.previewImg {
+  @include shadow();
+  grid-column: 9 / 13;
+  height: 20vh;
+  object-fit: cover;
+  z-index: $zMiddle;
+  right: 0;
+  position: absolute;
+  top: 20%;
+
+  @include tablet {
+    height: 30vh;
+    grid-column: 11 / 13;
+    width: 100%;
+    @include center($vertical: true);
+  }
+}
+
+.sliderControls {
+  position: absolute;
+  z-index: $zAbove;
+  right: 0;
+  height: 45vh;
+  color: $inactive;
+  width: calc(100% / 12 * 2);
+
+  @include tablet {
+    @include center($vertical: true);
+    grid-column: 11 / 13;
+    z-index: $zAbove;
+    width: 100%;
+    text-align: center;
+    height: calc(30vh + 8rem);
+    color: $inactive;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+
+    //
+    right: initial;
+  }
+
+  .slidenumber {
+    @include link;
+    position: relative;
+    align-self: flex-start;
+    width: 100%;
+    margin: 2.5rem 0 0 0;
+    text-align: center;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    span {
+      display: block;
+      color: $accent;
+      padding: 0.2rem 0;
+
+      @include tablet {
+        padding: 0;
+        display: inline-block;
+      }
+
+      &:nth-child(2) {
+        display: none;
+        color: $inactive;
+        margin: 0 1rem;
+
+        @include tablet {
+          display: inline-block;
+        }
+      }
+
+      &:nth-child(3) {
+        color: $inactive;
+      }
+    }
+  }
+
+  .slideIndicator {
+    align-self: flex-end;
+    width: 100%;
+    position: absolute;
+    bottom: 2.5rem;
+
+    @include tablet {
+      bottom: -0.5rem;
+    }
+
+    span {
+      display: block;
+      border: 2px solid $inactive;
+      border-radius: 100%;
+      width: 0.5rem;
+      height: 0.5rem;
+      margin: 1rem auto;
+
+      @include tablet {
+        display: inline-block;
+        margin: 1rem;
+      }
+
+      &.active {
+        border-color: $accent;
+        background-color: $accent;
+      }
+    }
+  }
+}
+
+.cta {
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &_container {
+    grid-column: 1/13;
+    height: 20vh;
+    background: white;
+
+    @include tablet {
+      grid-column: 4/10;
+      position: relative;
+
+      &:after {
+        content: "";
+        color: $accent;
+        position: absolute;
+        right: -3rem;
+        top: 50%;
+        transform: translate(-1rem, -50%);
+        background: url("arrow.svg") no-repeat;
+        height: 1.4rem;
+        width: 5rem;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+          transform: translate(0, -50%);
+          transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &_scroll {
+    width: calc(100% / 4);
+    height: 100%;
+    background: $accent;
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      display: none;
+
+      @include tablet {
+        @include center($vertical: true);
+        @include link($fontSize: 1.2rem);
+        transform: translate(-50%, -50%);
+        content: "SCROLL DOWN";
+      }
+    }
+
+    &_icon {
+      @include center($vertical: true, $horizontal: true);
+      width: 2rem;
+      height: 3.5rem;
+      border: 0.3rem solid $bg;
+      border-radius: 2rem;
+
+      span {
+        width: 0.3rem;
+        height: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $bg;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  &_content {
+    @include center($vertical: true);
+    width: 100%;
+    display: inline-block;
+    padding: 4rem 0 4rem 4rem;
+    max-width: 65%;
+
+    @include tablet {
+      max-width: 55%;
+    }
+
+    &_title {
+      font-size: 1.3rem;
+      color: $inactive_lightbg;
+      letter-spacing: 0.2rem;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    &_headline {
+      font-size: 2rem;
+      letter-spacing: 0rem;
+      color: #000430;
+      margin-bottom: 0;
+    }
+  }
+}
