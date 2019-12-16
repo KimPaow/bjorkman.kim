@@ -36,12 +36,6 @@ class OrganicSphere extends Component {
       size: 0.01,
       color: 0x000000
     });
-    // let material = new THREE.MeshLambertMaterial( {
-    //   wireframe: true,
-    //   //vertexColors: THREE.VertexColors,
-    //   color: 0x000000,
-    //   opacity: 0.8,
-    // } );
 
     //ADD LIGHT
     let lightTop = new THREE.DirectionalLight(0xffffff, 0.7);
