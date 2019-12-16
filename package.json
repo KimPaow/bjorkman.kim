@@ -13,6 +13,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-spring": "^8.0.27",
+    "simplex-noise": "^2.4.0",
+    "three": "^0.111.0",
     "webfontloader": "^1.6.28"
   },
   "scripts": {

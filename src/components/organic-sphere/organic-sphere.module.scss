@@ -1,0 +1,14 @@
+@import "../../styles/responsive.scss";
+
+.three__scene {
+  max-height: 500px;
+  max-width: 500px;
+  width: 500px;
+  height: 500px;
+  margin-left: -75%;
+  margin-top: 50%;
+  position: absolute;
+  z-index: -1;
+  display: block;
+  opacity: 0.2;
+}
