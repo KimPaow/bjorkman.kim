@@ -14,6 +14,14 @@ function App() {
     setIsLoaded(true);
   }, []);
 
+  // const redirectEvent = event => {
+  //   const {
+  //     history: { push }
+  //   } = this.props;
+  //   event.preventDefault();
+  //   setTimeout(() => push(to), 1000);
+  // };
+
   return (
     <>
       <Router>
@@ -22,7 +30,15 @@ function App() {
           <Route exact path="/">
             {isLoaded ? (
               <div className={styles.header}>
-                <Link to="/labs" className={styles.link}>
+                <Link
+                  // to={{
+                  //   pathname: '/labs',
+                  //   hash: ''
+                  // }}
+                  to="/labs"
+                  className={styles.link}
+                  // onClick={redirectEvent}
+                >
                   The lab.
                 </Link>
               </div>

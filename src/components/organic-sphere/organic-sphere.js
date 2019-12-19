@@ -27,7 +27,7 @@ class OrganicSphere extends Component {
 
     //ADD CAMERA
     this.camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
-    this.camera.position.z = width > 700 ? 3 : 4;
+    this.camera.position.z = window.innerWidth > 700 ? 3 : 4;
     this.camera.position.x = 0;
 
     //ADD RENDERER
