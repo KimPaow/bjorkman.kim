@@ -5,35 +5,13 @@
 $bg: #093cdc;
 $bg-darker: #001c70;
 $accent: #2cec82;
-$inactive: rgba(255, 255, 255, 0.2);
+$inactive: rgba(179, 147, 147, 0.2);
 $inactive_lightbg: rgba(0, 0, 0, 0.2);
 $linkSize: 1.5rem;
 $linkSize-mobile: 1.3rem;
 $zAbove: 10;
 $zMiddle: 0;
 $zBelow: -10;
-
-@mixin center($vertical: false, $horizontal: false) {
-  position: absolute;
-  @if $vertical and $horizontal {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } @else if $vertical {
-    top: 50%;
-    transform: translateY(-50%);
-  } @else if $horizontal {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-@mixin shadow() {
-  box-shadow: 0 2.8px 2.9px rgba(0, 0, 0, 0.02),
-    0 6.7px 7px rgba(0, 0, 0, 0.028), 0 12.5px 13.1px rgba(0, 0, 0, 0.035),
-    0 22.3px 23.5px rgba(0, 0, 0, 0.042), 0 41.8px 43.9px rgba(0, 0, 0, 0.05),
-    0 100px 105px rgba(0, 0, 0, 0.07);
-}
 
 @mixin link($hasArrow: false, $fontSize: $linkSize) {
   font-size: $linkSize-mobile;
@@ -269,7 +247,7 @@ $zBelow: -10;
       font-size: 9rem;
     }
 
-    span {
+    span:nth-child(3) {
       color: transparent;
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: $accent;

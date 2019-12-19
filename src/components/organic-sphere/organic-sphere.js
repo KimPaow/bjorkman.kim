@@ -4,7 +4,15 @@ import * as THREE from "three";
 import styles from "./organic-sphere.module.scss";
 
 class OrganicSphere extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoaded: false };
+  }
+
   componentDidMount() {
+    this.setState({
+      isMounted: true
+    });
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
     this.horizontalCenter =
@@ -34,7 +42,7 @@ class OrganicSphere extends Component {
     //ADD MATERIAL
     let material = new THREE.PointsMaterial({
       size: 0.01,
-      color: 0x000000
+      color: 0x555555
     });
 
     //ADD LIGHT
@@ -61,6 +69,9 @@ class OrganicSphere extends Component {
     if (typeof window !== `undefined`) {
       window.addEventListener("mousemove", this.mouseMove);
     }
+    this.setState({
+      isLoaded: true
+    });
   }
 
   componentWillUnmount() {
@@ -132,6 +143,12 @@ class OrganicSphere extends Component {
     return (
       <div
         className={styles.three__scene}
+        style={{
+          opacity: this.state.isLoaded ? 1 : 0,
+          transform: this.state.isLoaded
+            ? "translate(-50%, -50%)"
+            : "translate(-50%, 0)"
+        }}
         ref={mount => {
           this.mount = mount;
         }}

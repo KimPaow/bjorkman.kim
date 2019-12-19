@@ -9,13 +9,17 @@ html {
   margin: 0px;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $secondary-color;
-  color: $main-color;
+  background-color: $main-color;
+  color: $secondary-color;
   letter-spacing: 0px;
 }
 

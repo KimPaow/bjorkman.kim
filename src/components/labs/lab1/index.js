@@ -9,8 +9,7 @@ import delay from "delay";
 
 function Lab1() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
-  let prev = null;
+
   const slides = [
     {
       mainImg: mainImg1,
@@ -27,6 +26,15 @@ function Lab1() {
       title: "Graphic-Design",
       subtitle: "Studio Creative",
       linkText: "MEET OUR DESIGNERS",
+      ctaTitle: "Behind the scenes",
+      ctaHeadline: "Take a look at our process"
+    },
+    {
+      mainImg: mainImg1,
+      img: mainImg1,
+      title: "Branding",
+      subtitle: "Studio Creative",
+      linkText: "MAKE YOUR BRAND FRESH",
       ctaTitle: "Behind the scenes",
       ctaHeadline: "Take a look at our process"
     }
@@ -59,32 +67,9 @@ function Lab1() {
     }
   });
 
-  const handleNavigation = e => {
-    if (e.deltaY < 0) {
-      console.log("scrolling up");
-    } else if (e.deltaY > 0) {
-      console.log("scrolling down");
-    }
-  };
-
   useEffect(() => {
     setIsLoaded(true);
-    window.addEventListener("wheel", e => handleNavigation(e));
-
-    return () => {
-      window.removeEventListener("wheel", e => handleNavigation(e));
-    };
   }, []);
-
-  let {
-    mainImg,
-    img,
-    title,
-    subtitle,
-    linkText,
-    ctaTitle,
-    ctaHeadline
-  } = slides[activeSlide];
 
   return isLoaded ? (
     <div className={styles.root}>
@@ -97,16 +82,16 @@ function Lab1() {
           <div className={styles.logo}>Björk.</div>
           <ul className={styles.header}>
             <li>
-              <a href="/labs">HOME</a>
+              <a href="/labs/1">HOME</a>
             </li>
             <li>
-              <a href="/labs">ABOUT US</a>
+              <a href="/labs/1">ABOUT US</a>
             </li>
             <li>
-              <a href="/labs">PORTFOLIO</a>
+              <a href="/labs/1">PORTFOLIO</a>
             </li>
             <li>
-              <a href="/labs">CONTACT</a>
+              <a href="/labs/1">CONTACT</a>
             </li>
             <li>
               <button className={styles.hamburger}>
@@ -121,20 +106,23 @@ function Lab1() {
             <div className={styles.mainImg_container}>
               <img
                 className={styles.mainImg}
-                src={mainImg}
+                src={slides[0].mainImg}
                 alt="man on subway"
               />
             </div>
-            <img className={styles.previewImg} src={img} alt="portrait" />
+            <img
+              className={styles.previewImg}
+              src={slides[0].img}
+              alt="portrait"
+            />
             <div className={styles.textContent}>
               <h1>
-                {/* Video & Sound */}
-                {title}
+                <span>{slides[0].title}</span>
                 <br />
-                <span>{subtitle}</span>
+                <span>{slides[0].subtitle}</span>
               </h1>
               <a className={styles.textContentLink} href="/labs">
-                {linkText}
+                {slides[0].linkText}
               </a>
             </div>
             <div className={styles.sliderControls}>
@@ -160,8 +148,10 @@ function Lab1() {
                 </div>
               </div>
               <div className={styles.cta_content}>
-                <p className={styles.cta_content_title}>{ctaTitle}</p>
-                <p className={styles.cta_content_headline}>{ctaHeadline}</p>
+                <p className={styles.cta_content_title}>{slides[0].ctaTitle}</p>
+                <p className={styles.cta_content_headline}>
+                  {slides[0].ctaHeadline}
+                </p>
               </div>
             </a>
           </div>

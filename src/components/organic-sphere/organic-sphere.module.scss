@@ -5,10 +5,12 @@
   max-width: 500px;
   width: 500px;
   height: 500px;
-  margin-left: -75%;
-  margin-top: 50%;
+  left: 50%;
+  top: 50%;
   position: absolute;
+  transform: translate(-50%, -50%);
   z-index: -1;
   display: block;
-  opacity: 0.2;
+  opacity: 0;
+  transition: opacity 2s ease-in-out 0.5s, transform 2s ease-in-out;
 }

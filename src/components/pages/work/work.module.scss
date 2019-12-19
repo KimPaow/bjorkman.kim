@@ -1,0 +1,26 @@
+@import "../../../styles/vars.scss";
+@import "../../../styles/responsive.scss";
+
+.root {
+  @include layout;
+}
+
+.headline {
+  font-family: "Headland One", serif;
+  font-size: 4rem;
+  margin: 1rem 0 2rem -0.3rem;
+  letter-spacing: 0.3rem;
+
+  @include tablet {
+    font-size: 5rem;
+  }
+
+  @include desktop {
+    font-size: 8rem;
+  }
+}
+
+.prenounciation {
+  font-size: 1.6rem;
+  letter-spacing: 0.15rem;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import { Route, Link, useRouteMatch } from "react-router-dom";
 import { useTrail, useSpring, animated, config } from "react-spring";
 import LoadingSpinner from "../loading-spinner";
 import styles from "./labs.module.scss";
@@ -13,7 +13,6 @@ function Labs() {
   const [isIntroVisible, setIsIntroVisible] = useState(false);
 
   useEffect(() => {
-    document.body.style.backgroundColor = "rgb(17, 18, 26)";
     setIsLoaded(true);
 
     // animation chain
@@ -35,14 +34,13 @@ function Labs() {
     opacity: isLoaded ? 1 : 0,
     transform: isLoaded ? `translate(0, 0)` : `translate(0, 20px)`
   });
-  const introFadeSpringConfig = {
-    mass: 10,
-    tension: 2000,
-    friction: 200,
-    delay: 5.0
-  };
   const introFadeSpring = useSpring({
-    config: introFadeSpringConfig,
+    config: {
+      mass: 10,
+      tension: 2000,
+      friction: 200,
+      delay: 5.0
+    },
     opacity: isHeadlineVisible ? 1 : 0,
     transform: isHeadlineVisible ? `translate(0, 0)` : `translate(0, 20px)`
   });
@@ -76,7 +74,7 @@ function Labs() {
   // End Experiments List Trail
 
   return isLoaded ? (
-    <Switch>
+    <>
       <Route exact path="/labs">
         <div className={styles.layout}>
           <animated.p
@@ -105,7 +103,7 @@ function Labs() {
       <Route path={`${path}/1`}>
         <Lab1 />
       </Route>
-    </Switch>
+    </>
   ) : (
     <LoadingSpinner />
   );

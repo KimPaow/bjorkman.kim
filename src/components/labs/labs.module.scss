@@ -2,15 +2,7 @@
 @import "../../styles/responsive.scss";
 
 .layout {
-  padding: 3rem 3rem;
-  background-color: rgb(17, 18, 26);
-  min-height: 100vh;
-  color: $secondary-color;
-  font-family: "Darker Grotesque", sans-serif;
-
-  @include tablet {
-    padding: 15rem 15rem;
-  }
+  @include layout;
 }
 
 .headline {
@@ -18,6 +10,7 @@
   font-size: 4rem;
   margin: 1rem 0 2rem -0.3rem;
   letter-spacing: 0.3rem;
+  opacity: 0;
 
   @include tablet {
     font-size: 5rem;
