@@ -1,8 +1,6 @@
 @import "../../styles/vars.scss";
-@import "../../styles//responsive.scss";
-
-.link {
-}
+@import "../../styles/responsive.scss";
+@import "../../styles/mixins.scss";
 
 .root {
   width: 4.5rem;
@@ -13,9 +11,10 @@
   background: $secondary-color;
   color: $main-color;
   position: fixed;
-  top: 3rem;
-  left: 3rem;
+  top: 2rem;
+  left: 2rem;
   will-change: transform;
+  position: relative;
 
   .eyeLeft,
   .eyeRight {
@@ -40,8 +39,8 @@
   @include tablet {
     width: 6rem;
     height: 6rem;
-    top: 6rem;
-    left: 6rem;
+    top: 4rem;
+    left: 2rem;
     font-size: 4rem;
 
     .eyeLeft,
@@ -59,7 +58,30 @@
     }
   }
 
+  @include desktop {
+    left: 6rem;
+    top: 6rem;
+  }
+
   .mouth {
     @include center($vertical: true, $horizontal: true);
+  }
+
+  .fx {
+    position: relative;
+    height: 10rem;
+    top: 50%;
+    right: -100%;
+    // transform: translate(100%, -50%);
+    color: $secondary-color;
+    font-weight: 700;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 1.4rem;
+    line-height: normal;
+    letter-spacing: 0.25rem;
+
+    @include tablet {
+    }
   }
 }

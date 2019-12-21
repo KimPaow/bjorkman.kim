@@ -19,19 +19,15 @@ const AnimationRoot = props => {
       <a href="https://github.com/KimPaow">
         <GoMarkGithub />
       </a>
-      &nbsp;
       <a href="https://bitbucket.org/kimbjorkman/profile/repositories">
         <FaBitbucket />
       </a>
-      &nbsp;
       <a href="https://medium.com/@kimbjrkman">
         <FaMedium />
       </a>
-      &nbsp;
       <a href="mailto:kim.bjorkman@sunnyatsea.se">
         <MdEmail />
       </a>
-      &nbsp;
     </span>
   ];
 

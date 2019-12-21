@@ -5,6 +5,8 @@ import Logo from "./components/logo";
 import AnimationRoot from "./components/animation-root";
 import Labs from "./components/labs";
 import Work from "./components/pages/work";
+import About from "./components/pages/about";
+import DelayLink from "./components/delay-link";
 import styles from "./app.module.scss";
 
 function App() {
@@ -12,51 +14,45 @@ function App() {
 
   useEffect(() => {
     setIsLoaded(true);
+    return () => setIsLoaded(false);
   }, []);
 
-  // const redirectEvent = event => {
-  //   const {
-  //     history: { push }
-  //   } = this.props;
-  //   event.preventDefault();
-  //   setTimeout(() => push(to), 1000);
-  // };
+  const onDelayStart = (event, to) => {
+    console.log("onDelayStart");
+  };
+
+  const onDelayEnd = (event, to) => {
+    console.log("onDelayEnd");
+  };
 
   return (
     <>
       <Router>
         <Logo />
+        {isLoaded ? (
+          <div className={styles.header}>
+            <Link to="/labs" className={styles.link}>
+              The lab.
+            </Link>
+            <Link className={styles.link} to="/about">
+              About.
+            </Link>
+          </div>
+        ) : null}
         <Switch>
           <Route exact path="/">
-            {isLoaded ? (
-              <div className={styles.header}>
-                <Link
-                  // to={{
-                  //   pathname: '/labs',
-                  //   hash: ''
-                  // }}
-                  to="/labs"
-                  className={styles.link}
-                  // onClick={redirectEvent}
-                >
-                  The lab.
-                </Link>
-              </div>
-            ) : null}
             <Layout>
               <AnimationRoot />
             </Layout>
           </Route>
           <Route path="/labs">
-            <div className={styles.header}>
-              <Link to="/" className={styles.link}>
-                Go back.
-              </Link>
-            </div>
             <Labs />
           </Route>
-          <Route exakt path="/work">
+          <Route path="/work">
             <Work />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
         </Switch>
       </Router>

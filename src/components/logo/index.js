@@ -27,6 +27,7 @@ const Logo = () => {
         <span className={styles.eyeLeft}></span>
         <span className={styles.eyeRight}></span>
         <span className={styles.mouth}>O</span>
+        {/* <p className={styles.fx}>ギュアアッ</p> */}
       </animated.div>
     </Link>
   );

@@ -1,0 +1,114 @@
+@import "./responsive.scss";
+@import "./vars.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Jomolhari&display=auto");
+
+// Helpers
+@mixin center($vertical: false, $horizontal: false) {
+  position: absolute;
+  @if $vertical and $horizontal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $vertical {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $horizontal {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// UI styles
+@mixin shadow() {
+  box-shadow: 0 2.8px 2.9px rgba(0, 0, 0, 0.02),
+    0 6.7px 7px rgba(0, 0, 0, 0.028), 0 12.5px 13.1px rgba(0, 0, 0, 0.035),
+    0 22.3px 23.5px rgba(0, 0, 0, 0.042), 0 41.8px 43.9px rgba(0, 0, 0, 0.05),
+    0 100px 105px rgba(0, 0, 0, 0.07);
+}
+
+@mixin layout() {
+  padding: 10rem 3rem 0 3rem;
+  // background-color: rgb(17, 18, 26);
+  color: $secondary-color;
+  font-family: $font-body;
+  box-sizing: border-box;
+
+  @include tablet {
+    padding: 15rem 10rem 0 10rem;
+  }
+
+  @include desktop {
+    padding: 15rem 20rem 0 20rem;
+  }
+}
+
+// Typography
+@mixin headline() {
+  font-weight: normal;
+  font-family: "Jomolhari", serif;
+  margin: 1rem 0 5rem -0.2rem;
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  line-height: 5rem;
+
+  @include tablet {
+    font-size: 5rem;
+    letter-spacing: 0.3 rem;
+    line-height: 6rem;
+  }
+
+  @include wide-screen {
+    font-size: 6.5rem;
+    letter-spacing: 0.4rem;
+    line-height: 8rem;
+  }
+}
+
+@mixin body() {
+  font-size: 2rem;
+  line-height: 3rem;
+  max-width: 70rem;
+
+  @include tablet {
+    margin: 4rem 0;
+    font-size: 2.2rem;
+  }
+
+  @include desktop {
+    font-size: 2.8rem;
+    line-height: 4rem;
+  }
+}
+
+@mixin bodyJP() {
+  font-weight: 700;
+  text-orientation: upright;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  letter-spacing: 0.25rem;
+
+  @include tablet {
+    font-size: 2.2rem;
+    letter-spacing: 0.4rem;
+    line-height: 6rem;
+  }
+}
+
+@mixin list() {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 2.2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  line-height: 5rem;
+  display: inline-block;
+
+  @include tablet {
+    font-size: 3rem;
+  }
+
+  @include desktop {
+    font-size: 3rem;
+  }
+}
