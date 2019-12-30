@@ -3,8 +3,8 @@
 @import "../../styles/mixins.scss";
 
 .root {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 100%;
   font-size: 3rem;
   font-weight: bold;
@@ -46,32 +46,52 @@
   .eyeLeft,
   .eyeRight {
     content: "";
-    width: 0.6rem;
-    height: 0.6rem;
+    width: 0.4rem;
+    height: 0.4rem;
     border-radius: 100%;
     background: $main-color;
     position: absolute;
-    top: 45%;
+    top: 58%;
     left: 50%;
+
+    @include tablet {
+      top: 45%;
+      width: 0.6rem;
+      height: 0.6rem;
+    }
   }
 
   .eyeLeft {
-    transform: translate(-1rem, -1.7rem);
+    transform: translate(-0.8rem, -1.7rem);
+
+    @include tablet {
+      transform: translate(-1rem, -1.7rem);
+    }
   }
 
   .eyeRight {
     transform: translate(0.3rem, -1.7rem);
+
+    @include tablet {
+      transform: translate(0.5rem, -1.7rem);
+    }
   }
 
   .mouth {
     @include center($horizontal: true);
     top: 50%;
-    transform: translate(-50%, -40%);
-    width: 2.5rem;
-    height: 3rem;
-    border: 0.6rem solid $main-color;
+    transform: translate(-52%, -40%);
+    width: 1.6rem;
+    height: 2rem;
+    border: 0.4rem solid $main-color;
     box-sizing: border-box;
     border-radius: 45%;
+
+    @include tablet {
+      width: 2.5rem;
+      height: 3rem;
+      border: 0.6rem solid $main-color;
+    }
   }
 
   .fx {
