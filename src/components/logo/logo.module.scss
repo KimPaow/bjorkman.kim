@@ -22,20 +22,6 @@
     top: 4rem;
     left: 2rem;
     font-size: 4rem;
-
-    .eyeLeft,
-    .eyeRight {
-      width: 0.6rem;
-      height: 0.6rem;
-    }
-
-    .eyeLeft {
-      transform: translate(-1.1rem, -2.11rem);
-    }
-
-    .eyeRight {
-      transform: translate(0.4rem, -2.11rem);
-    }
   }
 
   @include desktop {
@@ -62,7 +48,7 @@
   }
 
   .eyeLeft {
-    transform: translate(-0.8rem, -1.7rem);
+    transform: translate(-0.8rem, -1.6rem);
 
     @include tablet {
       transform: translate(-1rem, -1.7rem);
@@ -70,10 +56,10 @@
   }
 
   .eyeRight {
-    transform: translate(0.3rem, -1.7rem);
+    transform: translate(0.3rem, -1.6rem);
 
     @include tablet {
-      transform: translate(0.5rem, -1.7rem);
+      transform: translate(0.4rem, -1.7rem);
     }
   }
 
