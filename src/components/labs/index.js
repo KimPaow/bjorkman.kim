@@ -68,7 +68,7 @@ function Labs() {
         <div className={styles.layout}>
           {trail.map((props, index) => {
             return (
-              <animated.div key={children[index]} style={props}>
+              <animated.div key={index} style={props}>
                 {children[index]}
               </animated.div>
             );
@@ -76,7 +76,9 @@ function Labs() {
         </div>
       </Route>
       <Route path={`${path}/1`}>
-        <Lab1 />
+        <div className={styles.labsContainer}>
+          <Lab1 />
+        </div>
       </Route>
     </>
   ) : (

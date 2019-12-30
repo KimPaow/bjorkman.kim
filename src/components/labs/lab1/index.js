@@ -73,34 +73,7 @@ function Lab1() {
 
   return isLoaded ? (
     <div className={styles.root}>
-      <div className={styles.bg}>
-        <div></div>
-        <div></div>
-      </div>
       <div className={styles.maincontent}>
-        <div className={styles.headerContainer}>
-          <div className={styles.logo}>Björk.</div>
-          <ul className={styles.header}>
-            <li>
-              <a href="/labs/1">HOME</a>
-            </li>
-            <li>
-              <a href="/labs/1">ABOUT US</a>
-            </li>
-            <li>
-              <a href="/labs/1">PORTFOLIO</a>
-            </li>
-            <li>
-              <a href="/labs/1">CONTACT</a>
-            </li>
-            <li>
-              <button className={styles.hamburger}>
-                <span className={styles.hamburgerItem} />
-                <span className={styles.hamburgerItem} />
-              </button>
-            </li>
-          </ul>
-        </div>
         <div className={styles.hero_container}>
           <div className={styles.content}>
             <div className={styles.mainImg_container}>

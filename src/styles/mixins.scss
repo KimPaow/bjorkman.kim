@@ -2,6 +2,7 @@
 @import "./vars.scss";
 
 @import url("https://fonts.googleapis.com/css?family=Jomolhari&display=auto");
+@import url("https://fonts.googleapis.com/css?family=Darker+Grotesque:500,700&display=auto");
 
 // Helpers
 @mixin center($vertical: false, $horizontal: false) {
@@ -66,6 +67,7 @@
 }
 
 @mixin body() {
+  font-family: "Darker Grotesque", sans-serif;
   font-size: 2rem;
   line-height: 3rem;
   max-width: 70rem;

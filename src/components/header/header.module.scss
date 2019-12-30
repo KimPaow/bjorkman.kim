@@ -1,0 +1,54 @@
+@import "../../styles/vars.scss";
+@import "../../styles/responsive.scss";
+
+.link {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  font-family: $font-body;
+  color: $secondary-color;
+  margin-left: 3rem;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-items: flex-end;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  flex-direction: row-reverse;
+  z-index: 1000;
+
+  @include tablet {
+    top: 6rem;
+    right: 6rem;
+  }
+
+  a:after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: -1rem;
+    right: 0;
+    left: 0;
+    height: 0.2rem;
+    background: $secondary-color;
+    transform: matrix(1, 0.05, -0.05, 1, 0, 5);
+    -ms-transform: matrix(1, 0.05, -0.05, 1, 0, 5);
+    -webkit-transform: matrix(1, 0.05, -0.05, 1, 0, 5);
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+  }
+
+  a:hover {
+    &:after {
+      transform: matrix(1, 0, 0, 1, 0, 0);
+      -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+      -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+      opacity: 1;
+      transition: 0.3s all ease-in-out;
+    }
+  }
+}

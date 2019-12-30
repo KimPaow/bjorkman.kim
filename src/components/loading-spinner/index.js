@@ -5,9 +5,11 @@ function LoadingSpinner() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 1000);
+    let loadedTimer = setTimeout(() => setIsLoaded(true), 1000);
+
+    return () => {
+      clearTimeout(loadedTimer);
+    };
   }, []);
 
   return (

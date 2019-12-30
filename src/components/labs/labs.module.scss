@@ -6,6 +6,14 @@
   @include layout;
 }
 
+.labPreamble {
+  @include body;
+
+  code {
+    font-size: 1.6rem;
+  }
+}
+
 .headline {
   @include headline;
 }
@@ -27,4 +35,15 @@
 
 .link {
   position: relative;
+}
+
+.labsContainer {
+  // margin-top: 10rem;
+  min-height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 15rem;
 }
