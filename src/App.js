@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Layout from "./components/layout";
-import Logo from "./components/logo";
-import AnimationRoot from "./components/animation-root";
-import Labs from "./components/labs";
-import Work from "./components/pages/work";
-import About from "./components/pages/about";
-import DelayLink from "./components/delay-link";
+// import DelayLink from "./components/delay-link";
 import styles from "./app.module.scss";
+import LoadingSpinner from "./components/loading-spinner";
+
+const AnimationRoot = React.lazy(() => import("./components/animation-root"));
+const Logo = React.lazy(() => import("./components/logo"));
+const Layout = React.lazy(() => import("./components/layout"));
+const Labs = React.lazy(() => import("./components/labs"));
+const Work = React.lazy(() => import("./components/pages/work"));
+const About = React.lazy(() => import("./components/pages/about"));
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,16 +19,8 @@ function App() {
     return () => setIsLoaded(false);
   }, []);
 
-  const onDelayStart = (event, to) => {
-    console.log("onDelayStart");
-  };
-
-  const onDelayEnd = (event, to) => {
-    console.log("onDelayEnd");
-  };
-
   return (
-    <>
+    <Suspense fallback={<LoadingSpinner />}>
       <Router>
         <Logo />
         {isLoaded ? (
@@ -56,7 +50,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </>
+    </Suspense>
   );
 }
 

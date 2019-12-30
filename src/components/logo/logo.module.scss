@@ -16,26 +16,6 @@
   will-change: transform;
   position: relative;
 
-  .eyeLeft,
-  .eyeRight {
-    content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 100%;
-    background: $main-color;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-
-  .eyeLeft {
-    transform: translate(-1rem, -1.7rem);
-  }
-
-  .eyeRight {
-    transform: translate(0.3rem, -1.7rem);
-  }
-
   @include tablet {
     width: 6rem;
     height: 6rem;
@@ -63,17 +43,44 @@
     top: 6rem;
   }
 
+  .eyeLeft,
+  .eyeRight {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 100%;
+    background: $main-color;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+  }
+
+  .eyeLeft {
+    transform: translate(-1rem, -1.7rem);
+  }
+
+  .eyeRight {
+    transform: translate(0.3rem, -1.7rem);
+  }
+
   .mouth {
-    @include center($vertical: true, $horizontal: true);
+    @include center($horizontal: true);
+    top: 50%;
+    transform: translate(-50%, -40%);
+    width: 2.5rem;
+    height: 3rem;
+    border: 0.6rem solid $main-color;
+    box-sizing: border-box;
+    border-radius: 45%;
   }
 
   .fx {
     position: relative;
     height: 10rem;
     top: 50%;
-    right: -100%;
-    // transform: translate(100%, -50%);
-    color: $secondary-color;
+    left: 50%;
+    transform: translate(100%, -50%);
+    color: $accent-color;
     font-weight: 700;
     writing-mode: vertical-rl;
     text-orientation: upright;
