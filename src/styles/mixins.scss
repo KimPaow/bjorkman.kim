@@ -28,6 +28,10 @@
     0 100px 105px rgba(0, 0, 0, 0.07);
 }
 
+@mixin textshadow() {
+  text-shadow: -0.5rem 0rem 1rem rgba(0, 0, 0, 1);
+}
+
 @mixin layout() {
   padding: 10rem 3rem 0 3rem;
   color: $secondary-color;

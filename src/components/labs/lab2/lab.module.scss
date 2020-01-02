@@ -1,0 +1,61 @@
+@import "../../../styles/vars.scss";
+@import "../../../styles/responsive.scss";
+@import "../../../styles/mixins.scss";
+
+.root {
+  height: 100%;
+  width: 100%;
+  min-height: 90vh;
+  position: relative;
+}
+
+.listContainer {
+  display: none;
+  width: 100%;
+  text-align: right;
+  padding-top: 10rem;
+  @include center($vertical: true, $horizontal: false);
+  @include desktop {
+    display: block;
+  }
+}
+
+.no_mobile {
+  display: block;
+  padding: 3rem;
+  text-align: center;
+  @include center($vertical: true, $horizontal: false);
+  @include body;
+  @include desktop {
+    display: none;
+  }
+}
+
+.listRoot {
+  display: flex;
+  max-width: 40rem;
+  margin: 0 auto;
+
+  p {
+    font-size: 4rem;
+    line-height: 8rem;
+    letter-spacing: 1rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    writing-mode: vertical-rl;
+
+    span {
+      color: $secondary-color;
+      opacity: 0.3;
+    }
+  }
+}
+
+.listItem {
+  width: 30%;
+  align-self: flex-start;
+  display: inline-block;
+  img {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@ import LoadingSpinner from "../loading-spinner";
 import styles from "./labs.module.scss";
 
 const Lab1 = React.lazy(() => import("./lab1"));
+const Lab2 = React.lazy(() => import("./lab2"));
 
 function Labs() {
   let { path, url } = useRouteMatch();
@@ -18,6 +19,9 @@ function Labs() {
   const listChildren = [
     <Link className={styles.link} to={`${url}/1`}>
       React-Spring
+    </Link>,
+    <Link className={styles.link} to={`${url}/2`}>
+      Three.js Image Distort
     </Link>
   ];
 
@@ -78,6 +82,11 @@ function Labs() {
       <Route path={`${path}/1`}>
         <div className={styles.labsContainer}>
           <Lab1 />
+        </div>
+      </Route>
+      <Route path={`${path}/2`}>
+        <div className={styles.labsContainer}>
+          <Lab2 />
         </div>
       </Route>
     </>
