@@ -1,24 +1,101 @@
 import React, { useEffect, useState } from "react";
 import styles from "./lab.module.scss";
 import ImageDistort from "react-image-list-distort";
-import Switch from "../../ui/switch";
+import Slider from "react-input-slider";
 
 function Lab2() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [value, setValue] = useState(false);
+  const [strength, setStrength] = useState(0.5);
+  const [radius, setRadius] = useState(0.5);
+  const [effect, setEffect] = useState("redshift");
+  const [shape, setShape] = useState("circle");
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const sliderStyles = {
+    track: {
+      backgroundColor: "rgba(255, 255, 255, 0.2)",
+      top: "50%",
+      transform: "translateY(-50%)"
+    },
+    active: {
+      backgroundColor: "#f0f0f0"
+    },
+    thumb: {
+      backgroundColor: "rgb(23, 26, 27)",
+      boxShadow: "0 0 0 0.2rem #f0f0f0",
+      width: 20,
+      height: 20
+    }
+  };
 
   return isLoaded ? (
     <div className={styles.root}>
       <p className={styles.no_mobile}>
         This lab is only available on desktop for now.
       </p>
-      {/* <div className={styles.controls}>
-        <Switch isOn={value} handleToggle={() => setValue(!value)}></Switch>
-      </div> */}
+      <div className={styles.controls}>
+        <div className={styles.controls_item}>
+          <label className={styles.controls_item_label}>{`Strength: ${Number(
+            strength
+          ).toFixed(2)}`}</label>
+          <Slider
+            styles={sliderStyles}
+            xstep={0.01}
+            xmax={1}
+            xmin={0}
+            x={strength}
+            onChange={({ x }) => setStrength(x)}
+          />
+        </div>
+        <div className={styles.controls_item}>
+          <label className={styles.controls_item_label}>{`Radius: ${Number(
+            radius
+          ).toFixed(2)}`}</label>
+          <Slider
+            styles={sliderStyles}
+            xstep={0.01}
+            xmax={1}
+            xmin={0}
+            x={radius}
+            onChange={({ x }) => setRadius(x)}
+          />
+        </div>
+        <div className={styles.controls_item}>
+          <label className={styles.controls_item_label}>Effect</label>
+          <button
+            onClick={() => setEffect("redshift")}
+            style={effect === "redshift" ? { opacity: 1 } : { opacity: 0.6 }}
+          >
+            Redshift.
+          </button>
+          <span className={styles.button_divider}>|</span>
+          <button
+            onClick={() => setEffect("stretch")}
+            style={effect === "stretch" ? { opacity: 1 } : { opacity: 0.6 }}
+          >
+            Stretch.
+          </button>
+        </div>
+        <div className={styles.controls_item}>
+          <label className={styles.controls_item_label}>Shape</label>
+          <button
+            onClick={() => setShape("circle")}
+            style={shape === "circle" ? { opacity: 1 } : { opacity: 0.6 }}
+          >
+            Circle.
+          </button>
+          <span className={styles.button_divider}>|</span>
+          <button
+            onClick={() => setShape("plane")}
+            style={shape === "plane" ? { opacity: 1 } : { opacity: 0.6 }}
+          >
+            Plane.
+          </button>
+        </div>
+      </div>
       <div className={styles.listContainer}>
         <ul className={styles.listRoot}>
           <li className={styles.listItem} key="3">
@@ -49,11 +126,11 @@ function Lab2() {
         listRoot={`.${styles.listRoot}`}
         itemRoot={"li"}
         options={{
-          strength: 0.45,
-          effect: "redshift",
+          strength: strength,
+          effect: effect,
           geometry: {
-            shape: "circle",
-            radius: 0.4
+            shape: shape,
+            radius: radius
           }
         }}
       ></ImageDistort>
