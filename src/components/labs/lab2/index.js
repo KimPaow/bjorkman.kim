@@ -99,21 +99,21 @@ function Lab2() {
       <div className={styles.listContainer}>
         <ul className={styles.listRoot}>
           <li className={styles.listItem} key="3">
-            <img src="/onecup.jpg" />
+            <img src="/onecup.jpg" alt="onecup sake" />
             <p>
               <span>三·</span>ワンカップ
               <br />
             </p>
           </li>
           <li className={styles.listItem} key="2">
-            <img src="/ramen.jpg" />
+            <img src="/ramen.jpg" alt="good looking ramen" />
             <p>
               <span>二·</span>ラーメン
               <br />
             </p>
           </li>
           <li className={styles.listItem} key="1">
-            <img src="/curry.jpg" />
+            <img src="/curry.jpg" alt="japanese curry" />
             <p>
               <span>一·</span>カレー
               <br />

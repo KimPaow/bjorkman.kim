@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import DelayLink from "./components/delay-link";
 import LoadingSpinner from "./components/loading-spinner";

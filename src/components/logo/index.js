@@ -17,18 +17,12 @@ const Logo = () => {
   const trans = (x, y, s) =>
     `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-  const clickHandler = () => {
-    let svgs = document.querySelectorAll(styles.sfx);
-    setTimeout();
-  };
-
   return (
     <Link className={styles.logoContainer} to={`/`}>
       <animated.div
         id="logoRoot"
         ref={logoRef}
         className={styles.root}
-        // onClick={clickHandler()}
         onMouseMove={({ clientX: x, clientY: y }) => {
           set({ xys: calc(x, y) });
         }}
