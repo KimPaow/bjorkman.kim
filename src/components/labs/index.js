@@ -19,10 +19,10 @@ function Labs() {
   // Experiments List Trail
   const listChildren = [
     <Link key="3" className={styles.link} to={`${url}/3`}>
-      Three.js Image Liquid effect
+      Image Liquid effect
     </Link>,
     <Link key="2" className={styles.link} to={`${url}/2`}>
-      Three.js Image List Distort
+      Image List Distort
     </Link>,
     <Link key="1" className={styles.link} to={`${url}/1`}>
       React-Spring
