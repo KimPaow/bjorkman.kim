@@ -17,11 +17,11 @@ function Labs() {
 
   // Experiments List Trail
   const listChildren = [
-    <Link className={styles.link} to={`${url}/1`}>
-      React-Spring
-    </Link>,
     <Link className={styles.link} to={`${url}/2`}>
       Three.js Image Distort
+    </Link>,
+    <Link className={styles.link} to={`${url}/1`}>
+      React-Spring
     </Link>
   ];
 
