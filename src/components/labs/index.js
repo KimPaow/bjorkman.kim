@@ -6,6 +6,7 @@ import styles from "./labs.module.scss";
 
 const Lab1 = React.lazy(() => import("./lab1"));
 const Lab2 = React.lazy(() => import("./lab2"));
+const WaterEffect = React.lazy(() => import("./lab3"));
 
 function Labs() {
   let { path, url } = useRouteMatch();
@@ -17,10 +18,13 @@ function Labs() {
 
   // Experiments List Trail
   const listChildren = [
-    <Link className={styles.link} to={`${url}/2`}>
-      Three.js Image Distort
+    <Link key="3" className={styles.link} to={`${url}/3`}>
+      Three.js Image Liquid effect
     </Link>,
-    <Link className={styles.link} to={`${url}/1`}>
+    <Link key="2" className={styles.link} to={`${url}/2`}>
+      Three.js Image List Distort
+    </Link>,
+    <Link key="1" className={styles.link} to={`${url}/1`}>
       React-Spring
     </Link>
   ];
@@ -48,7 +52,7 @@ function Labs() {
     <ul className={styles.childrenlist}>
       {listTrail.map((props, index) => {
         return (
-          <animated.li key={listChildren[index]} style={props}>
+          <animated.li key={`${listChildren[index]}_${index}`} style={props}>
             {listChildren[index]}
           </animated.li>
         );
@@ -87,6 +91,11 @@ function Labs() {
       <Route path={`${path}/2`}>
         <div className={styles.labsContainer}>
           <Lab2 />
+        </div>
+      </Route>
+      <Route path={`${path}/3`}>
+        <div className={styles.labsContainer}>
+          <WaterEffect image={"./ramen.jpg"} />
         </div>
       </Route>
     </>

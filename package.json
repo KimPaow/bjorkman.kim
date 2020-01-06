@@ -9,6 +9,7 @@
     "lerp": "^1.0.3",
     "node-sass": "^4.13.0",
     "pixi.js": "^5.2.0",
+    "postprocessing": "^6.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-icons": "^3.8.0",
