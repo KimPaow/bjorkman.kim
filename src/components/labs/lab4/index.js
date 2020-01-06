@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./lab.module.scss";
-import ImageDistort from "react-image-list-distort";
-import Slider from "react-input-slider";
 
-function Lab2() {
+function Lab4() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -19,4 +17,4 @@ function Lab2() {
   ) : null;
 }
 
-export default Lab2;
+export default Lab4;

@@ -7,6 +7,7 @@ import styles from "./labs.module.scss";
 const Lab1 = React.lazy(() => import("./lab1"));
 const Lab2 = React.lazy(() => import("./lab2"));
 const WaterEffect = React.lazy(() => import("./lab3"));
+const Lab4 = React.lazy(() => import("./lab4"));
 
 function Labs() {
   let { path, url } = useRouteMatch();
@@ -18,8 +19,11 @@ function Labs() {
 
   // Experiments List Trail
   const listChildren = [
+    // <Link key="4" className={styles.link} to={`${url}/4`}>
+    //   Three.js | Anime.js Timeline
+    // </Link>,
     <Link key="3" className={styles.link} to={`${url}/3`}>
-      Image Liquid effect
+      Image Liquid Effect
     </Link>,
     <Link key="2" className={styles.link} to={`${url}/2`}>
       Image List Distort
@@ -95,7 +99,12 @@ function Labs() {
       </Route>
       <Route path={`${path}/3`}>
         <div className={styles.labsContainer}>
-          <WaterEffect image={"./ramen.jpg"} />
+          <WaterEffect />
+        </div>
+      </Route>
+      <Route path={`${path}/4`}>
+        <div className={styles.labsContainer}>
+          <Lab4 />
         </div>
       </Route>
     </>
