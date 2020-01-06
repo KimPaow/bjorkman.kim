@@ -158,12 +158,17 @@ class WaterEffect extends Component {
 
   render() {
     return (
-      <div
-        className={styles.root}
-        ref={mount => {
-          this.mount = mount;
-        }}
-      ></div>
+      <>
+        <p className={styles.no_mobile}>
+          This lab is only available on desktop for now.
+        </p>
+        <div
+          className={styles.root}
+          ref={mount => {
+            this.mount = mount;
+          }}
+        ></div>
+      </>
     );
   }
 }
