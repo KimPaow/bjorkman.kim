@@ -126,18 +126,19 @@
   display: flex;
   max-width: 40rem;
   margin: 0 auto;
+  list-style-type: none;
 
   p {
     font-size: 4rem;
     line-height: 8rem;
-    letter-spacing: 1rem;
+    font-weight: bold;
+    letter-spacing: 2rem;
     max-width: 50rem;
     margin: 0 auto;
     writing-mode: vertical-rl;
 
     span {
-      color: $secondary-color;
-      opacity: 0.3;
+      color: $inactive-color;
     }
   }
 }
@@ -146,6 +147,7 @@
   width: 30%;
   align-self: flex-start;
   display: inline-block;
+
   img {
     display: none;
   }

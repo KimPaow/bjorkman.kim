@@ -38,7 +38,7 @@ function Lab2() {
       </p>
       <div className={styles.controls}>
         <div className={styles.controls_item}>
-          <label className={styles.controls_item_label}>{`Strength: ${Number(
+          <label className={styles.controls_item_label}>{`Strength | ${Number(
             strength
           ).toFixed(2)}`}</label>
           <Slider
@@ -51,7 +51,7 @@ function Lab2() {
           />
         </div>
         <div className={styles.controls_item}>
-          <label className={styles.controls_item_label}>{`Radius: ${Number(
+          <label className={styles.controls_item_label}>{`Radius | ${Number(
             radius
           ).toFixed(2)}`}</label>
           <Slider
