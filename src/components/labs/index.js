@@ -8,6 +8,7 @@ const Lab1 = React.lazy(() => import("./lab1"));
 const Lab2 = React.lazy(() => import("./lab2"));
 const WaterEffect = React.lazy(() => import("./lab3"));
 const Lab4 = React.lazy(() => import("./lab4"));
+const Lab5 = React.lazy(() => import("./lab5"));
 
 function Labs() {
   let { path, url } = useRouteMatch();
@@ -19,6 +20,9 @@ function Labs() {
 
   // Experiments List Trail
   const listChildren = [
+    <Link key="5" className={styles.link} to={`${url}/5`}>
+      Smooth Scrolling
+    </Link>,
     // <Link key="4" className={styles.link} to={`${url}/4`}>
     //   Three.js | Anime.js Timeline
     // </Link>,
@@ -106,6 +110,9 @@ function Labs() {
         <div className={styles.labsContainer}>
           <Lab4 />
         </div>
+      </Route>
+      <Route path={`${path}/5`}>
+        <Lab5 />
       </Route>
     </>
   ) : (
