@@ -1,43 +1,46 @@
 import React, { useEffect, useState } from "react";
-import { Route, Link, useRouteMatch } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import { useTrail, animated, config } from "react-spring";
 import LoadingSpinner from "../loading-spinner";
 import styles from "./labs.module.scss";
 
-const Lab1 = React.lazy(() => import("./lab1"));
-const Lab2 = React.lazy(() => import("./lab2"));
-const WaterEffect = React.lazy(() => import("./lab3"));
-const Lab4 = React.lazy(() => import("./lab4"));
-const Lab5 = React.lazy(() => import("./lab5"));
-
 function Labs() {
-  let { path, url } = useRouteMatch();
+  let { url } = useRouteMatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  // Experiments List Trail
-  const listChildren = [
-    <Link key="5" className={styles.link} to={`${url}/5`}>
-      Smooth Scrolling
-    </Link>,
-    // <Link key="4" className={styles.link} to={`${url}/4`}>
-    //   Three.js | Anime.js Timeline
-    // </Link>,
-    <Link key="3" className={styles.link} to={`${url}/3`}>
-      Image Liquid Effect
-    </Link>,
-    <Link key="2" className={styles.link} to={`${url}/2`}>
-      List Image Distort
-    </Link>
-    // <Link key="1" className={styles.link} to={`${url}/1`}>
-    //   React-Spring
-    // </Link>
+  const labLinksData = [
+    {
+      key: "LAB_5",
+      text: "Smooth Scrolling",
+      to: `${url}/5`
+    },
+    // {
+    //   key: "LAB_4",
+    //   text: "Three.js | Anime.js Timeline",
+    //   to: `${url}/4`
+    // },
+    {
+      key: "LAB_3",
+      text: "Image Liquid Effect",
+      to: `${url}/3`
+    },
+    {
+      key: "LAB_2",
+      text: "List Image Distort",
+      to: `${url}/2`
+    }
+    // {
+    //   key: "LAB_1",
+    //   text: "React Spring",
+    //   to: `${url}/1`
+    // }
   ];
 
-  const listTrail = useTrail(listChildren.length, {
+  const listTrail = useTrail(labLinksData.length, {
     config: config.gentle,
     opacity: isLoaded ? 1 : 0,
     transform: isLoaded
@@ -59,9 +62,12 @@ function Labs() {
     </animated.p>,
     <ul className={styles.childrenlist}>
       {listTrail.map((props, index) => {
+        const listItem = labLinksData[index];
         return (
-          <animated.li key={`${listChildren[index]}_${index}`} style={props}>
-            {listChildren[index]}
+          <animated.li key={listItem.key} style={props}>
+            <Link className={styles.link} to={listItem.to}>
+              {listItem.text}
+            </Link>
           </animated.li>
         );
       })}
@@ -79,42 +85,15 @@ function Labs() {
   // End Experiments List Trail
 
   return isLoaded ? (
-    <>
-      <Route exact path="/labs">
-        <div className={styles.layout}>
-          {trail.map((props, index) => {
-            return (
-              <animated.div key={index} style={props}>
-                {children[index]}
-              </animated.div>
-            );
-          })}
-        </div>
-      </Route>
-      <Route path={`${path}/1`}>
-        <div className={styles.labsContainer}>
-          <Lab1 />
-        </div>
-      </Route>
-      <Route path={`${path}/2`}>
-        <div className={styles.labsContainer}>
-          <Lab2 />
-        </div>
-      </Route>
-      <Route path={`${path}/3`}>
-        <div className={styles.labsContainer}>
-          <WaterEffect />
-        </div>
-      </Route>
-      <Route path={`${path}/4`}>
-        <div className={styles.labsContainer}>
-          <Lab4 />
-        </div>
-      </Route>
-      <Route path={`${path}/5`}>
-        <Lab5 />
-      </Route>
-    </>
+    <div className={styles.layout}>
+      {trail.map((props, index) => {
+        return (
+          <animated.div key={index} style={props}>
+            {children[index]}
+          </animated.div>
+        );
+      })}
+    </div>
   ) : (
     <LoadingSpinner />
   );

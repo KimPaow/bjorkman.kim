@@ -3,16 +3,13 @@ import SimplexNoise from "simplex-noise";
 import * as THREE from "three";
 import styles from "./organic-sphere.module.scss";
 
-class OrganicSphere extends Component {
+export default class OrganicSphere extends Component {
   constructor(props) {
     super(props);
     this.state = { isLoaded: false };
   }
 
   componentDidMount() {
-    this.setState({
-      isMounted: true
-    });
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
     this.horizontalCenter =
@@ -156,4 +153,3 @@ class OrganicSphere extends Component {
     );
   }
 }
-export default OrganicSphere;

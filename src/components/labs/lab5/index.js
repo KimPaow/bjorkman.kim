@@ -4,7 +4,6 @@ import useEventListener from "../../../utils/hooks/useEventListener";
 
 function Lab5() {
   const [isLoaded, setIsLoaded] = useState(false);
-
   const containerRef = useRef();
   let currentPos = window.pageYOffset;
 
@@ -19,8 +18,6 @@ function Lab5() {
     }deg)`;
 
     currentPos = newPos;
-
-    // requestAnimationFrame(logit);
   };
 
   useEventListener("scroll", onScroll);
