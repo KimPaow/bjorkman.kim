@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
+import Helmet from "react-helmet";
 import styles from "./labs.module.scss";
 
 const LoadingSpinner = React.lazy(() => import("../loading-spinner"));
@@ -23,6 +24,9 @@ function Labs() {
 
   return isLoaded ? (
     <div className={styles.layout}>
+      <Helmet>
+        <title>The lab</title>
+      </Helmet>
       <FadeInTranslate fade_matrix>
         <p className={styles.prenounciation}>/la-b(ə-)rə-ˌtȯr-ē/</p>
         <h1 className={styles.headline}>Laboratory.</h1>

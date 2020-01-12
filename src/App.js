@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { Router } from "react-router-dom";
+import Helmet from "react-helmet";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 import LoadingSpinner from "./components/loading-spinner";
@@ -20,6 +21,15 @@ history.listen(location => {
 function App() {
   return (
     <Layout>
+      <Helmet titleTemplate="%s | Kim Björkman" defaultTitle="Kim Björkman">
+        <meta charSet="utf-8" />
+        <title>Home</title>
+        <meta
+          name="description"
+          content="Kim Björkman is a creative developer based in Stockholm and Japan. Currently working at Sunny at Sea in Stockholm, Sweden."
+        />
+        <link rel="apple-touch-icon" href="/appletouch.png" />
+      </Helmet>
       <Suspense fallback={<LoadingSpinner />}>
         <Router history={history}>
           <Header />

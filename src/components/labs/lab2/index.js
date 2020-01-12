@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./lab.module.scss";
 import ImageDistort from "react-image-list-distort";
 import Slider from "react-input-slider";

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
-import LoadingSpinner from "../../loading-spinner";
-import FadeInTranslate from "../../animation-wrappers/fade-in-translate";
+import Helmet from "react-helmet";
 import styles from "./about.module.scss";
+
+const FadeInTranslate = React.lazy(() =>
+  import("../../animation-wrappers/fade-in-translate")
+);
+const LoadingSpinner = React.lazy(() => import("../../loading-spinner"));
 
 const About = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -12,6 +16,9 @@ const About = () => {
 
   return isLoaded ? (
     <div className={styles.root}>
+      <Helmet>
+        <title>About</title>
+      </Helmet>
       <FadeInTranslate fade_matrix>
         <h1 className={styles.headline}>
           Reactive things.
