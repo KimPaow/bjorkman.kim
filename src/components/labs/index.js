@@ -30,11 +30,11 @@ function Labs() {
       Image Liquid Effect
     </Link>,
     <Link key="2" className={styles.link} to={`${url}/2`}>
-      Image List Distort
-    </Link>,
-    <Link key="1" className={styles.link} to={`${url}/1`}>
-      React-Spring
+      List Image Distort
     </Link>
+    // <Link key="1" className={styles.link} to={`${url}/1`}>
+    //   React-Spring
+    // </Link>
   ];
 
   const listTrail = useTrail(listChildren.length, {

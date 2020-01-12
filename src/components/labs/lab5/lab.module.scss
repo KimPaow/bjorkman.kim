@@ -5,7 +5,6 @@
 .root {
   height: 100%;
   width: 100%;
-  min-height: 90vh;
   position: relative;
 }
 
@@ -14,7 +13,7 @@
   padding: 3rem;
   max-width: 70rem;
   margin: 4rem auto;
-  transition: transform 0.25s ease;
+  transition: transform 0.05s ease;
   will-change: transform;
   box-sizing: border-box;
 

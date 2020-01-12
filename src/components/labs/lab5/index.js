@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./lab.module.scss";
+import useEventListener from "../../../utils/hooks/useEventListener";
 
 function Lab5() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
   const containerRef = useRef();
   let currentPos = window.pageYOffset;
 
-  const logit = () => {
+  const onScroll = () => {
     if (!containerRef.current) return null;
     const newPos = window.pageYOffset;
     const diff = newPos - currentPos;
@@ -23,15 +23,10 @@ function Lab5() {
     // requestAnimationFrame(logit);
   };
 
+  useEventListener("scroll", onScroll);
+
   useEffect(() => {
-    function watchScroll() {
-      window.addEventListener("scroll", logit);
-    }
-    watchScroll();
     setIsLoaded(true);
-    return () => {
-      window.removeEventListener("scroll", logit);
-    };
   }, []);
 
   return isLoaded ? (
