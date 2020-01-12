@@ -6,6 +6,7 @@ const LoadingSpinner = React.lazy(() => import("../loading-spinner"));
 const FadeInTranslate = React.lazy(() =>
   import("../animation-wrappers/fade-in-translate")
 );
+const AnimatedLink = React.lazy(() => import("../ui-components/animated-link"));
 
 function Labs() {
   let { url } = useRouteMatch();
@@ -14,6 +15,11 @@ function Labs() {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const linkStyle = {
+    fontWeight: "500",
+    lineHeight: "normal"
+  };
 
   return isLoaded ? (
     <div className={styles.layout}>
@@ -29,9 +35,9 @@ function Labs() {
         <ul className={styles.childrenlist}>
           <FadeInTranslate fade_matrix>
             <li key="LAB_5">
-              <Link className={styles.link} to={`${url}/5`}>
+              <AnimatedLink style={linkStyle} to={`${url}/5`}>
                 Smooth Scrolling
-              </Link>
+              </AnimatedLink>
             </li>
             {/* <li key="LAB_4">
               <Link className={styles.link} to={`${url}/4`}>
@@ -39,14 +45,14 @@ function Labs() {
               </Link>
             </li> */}
             <li key="LAB_3">
-              <Link className={styles.link} to={`${url}/3`}>
+              <AnimatedLink style={linkStyle} to={`${url}/3`}>
                 Image Liquid Effect
-              </Link>
+              </AnimatedLink>
             </li>
             <li key="LAB_2">
-              <Link className={styles.link} to={`${url}/2`}>
+              <AnimatedLink style={linkStyle} to={`${url}/2`}>
                 List Image Distort
-              </Link>
+              </AnimatedLink>
             </li>
             {/* <li key="LAB_1">
               <Link className={styles.link} to={`${url}/1`}>
