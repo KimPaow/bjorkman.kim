@@ -24,6 +24,12 @@ function App() {
       <Helmet titleTemplate="%s | Kim Björkman" defaultTitle="Kim Björkman">
         <meta charSet="utf-8" />
         <title>Home</title>
+        <link rel="canonical" href="https://www.kimbjorkman.com/" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Creative Developer | Kim Björkman" />
+        <meta property="og:description" content="Kim Björkman is a creative developer based in Stockholm and Japan. Currently working at Sunny at Sea in Stockholm, Sweden." />
+        <meta name="twitter:title" content="Creative Developer | Kim Björkman"/>
+        <meta name="twitter:description" content="Kim Björkman is a creative developer based in Stockholm and Japan. Currently working at Sunny at Sea in Stockholm, Sweden."/>
         <meta
           name="description"
           content="Kim Björkman is a creative developer based in Stockholm and Japan. Currently working at Sunny at Sea in Stockholm, Sweden."
