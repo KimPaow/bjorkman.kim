@@ -16,6 +16,7 @@
   padding-top: 10rem;
   @include center($vertical: true, $horizontal: false);
   @include desktop {
+    padding-top: 0;
     display: block;
   }
 }
@@ -27,7 +28,6 @@
     padding: 4rem 3rem 2rem 3rem;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 0 1rem 1rem 0;
-    // @include center($vertical: true);
     bottom: 0;
     position: fixed;
     writing-mode: horizontal-tb;

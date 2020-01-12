@@ -10,7 +10,6 @@ import { useTrail, animated } from "react-spring";
 const AnimationRoot = props => {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Experiments List Trail
   const children = [
     "こんにちは。",
     "キムといます、良かったら連絡してください。",

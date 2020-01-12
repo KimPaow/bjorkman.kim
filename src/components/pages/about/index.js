@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useTrail, animated, config } from "react-spring";
+import LoadingSpinner from "../../loading-spinner";
+import FadeInTranslate from "../../animation-wrappers/fade-in-translate";
 import styles from "./about.module.scss";
 
 const About = () => {
@@ -9,57 +10,28 @@ const About = () => {
     setIsLoaded(true);
   }, []);
 
-  const items = [
-    {
-      text: "Reactive things.\nInteresting things.",
-      type: "headline",
-      key: 1
-    },
-    {
-      text: `This is the home of Kim Björkman, the site serves as both a showcase and a place to experiment.`,
-      type: "paragraph",
-      key: 2
-    },
-    {
-      text: `A painter turned VFX/3D artist, turned graphic designer, turned backend
-        developer, turned frontend developer. Kim tries to shape a
-        multi-disciplinary background into highly polished digital experiences.`,
-      type: "paragraph",
-      key: 3
-    }
-  ];
-
-  const trail = useTrail(items.length, {
-    config: config.gentle,
-    opacity: isLoaded ? 1 : 0,
-    transform: isLoaded
-      ? "matrix(1.00,0.00,0.00,1.00,0,0)"
-      : "matrix(1, 0.05, -0.05, 1, 0, 50)",
-    from: { opacity: 0, transform: "matrix(1, 0.05, -0.05, 1, 0, 50)" }
-  });
-
-  return (
+  return isLoaded ? (
     <div className={styles.root}>
-      {trail.map(({ ...rest }, index) => {
-        return items[index].type === "headline" ? (
-          <animated.h1
-            className={styles.headline}
-            style={{ ...rest }}
-            key={items[index].key}
-          >
-            {items[index].text}
-          </animated.h1>
-        ) : items[index].type === "paragraph" ? (
-          <animated.p
-            className={styles.body}
-            style={{ ...rest }}
-            key={items[index].key}
-          >
-            {items[index].text}
-          </animated.p>
-        ) : null;
-      })}
+      <FadeInTranslate fade_matrix>
+        <h1 className={styles.headline}>
+          Reactive things.
+          <br />
+          Interesting things.
+        </h1>
+        <p className={styles.body}>
+          This is the home of Kim Björkman, the site serves as both a showcase
+          and a place to experiment.
+        </p>
+        <p className={styles.body}>
+          A painter turned VFX/3D artist, turned graphic designer, turned
+          backend developer, turned frontend developer. Kim tries to shape a
+          multi-disciplinary background into highly polished digital
+          experiences.
+        </p>
+      </FadeInTranslate>
     </div>
+  ) : (
+    <LoadingSpinner />
   );
 };
 

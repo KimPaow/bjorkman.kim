@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./lab.module.scss";
 import ImageDistort from "react-image-list-distort";
 import Slider from "react-input-slider";
+import { useTrail, animated, config } from "react-spring";
 
 function Lab2() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -13,6 +14,43 @@ function Lab2() {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const children = [
+    <>
+      <img src="/onecup.jpg" alt="onecup sake" />
+      <p>
+        <span>三·</span>ワンカップ
+        <br />
+      </p>
+    </>,
+    <>
+      <img src="/ramen.jpg" alt="good looking ramen" />
+      <p>
+        <span>二·</span>ラーメン
+        <br />
+      </p>
+    </>,
+    <>
+      <img src="/curry.jpg" alt="japanese curry" />
+      <p>
+        <span>一·</span>カレー
+        <br />
+      </p>
+    </>
+  ];
+
+  const trail = useTrail(children.length, {
+    config: config.gentle,
+    opacity: isLoaded ? 1 : 0
+  });
+
+  const createList = (children, trail) => {
+    return trail.map((props, index) => (
+      <animated.li className={styles.listItem} key={index} style={props}>
+        {children[index]}
+      </animated.li>
+    ));
+  };
 
   const sliderStyles = {
     track: {
@@ -36,6 +74,9 @@ function Lab2() {
       <p className={styles.no_mobile}>
         This lab is only available on desktop for now.
       </p>
+      <div className={styles.listContainer}>
+        <ul className={styles.listRoot}>{createList(children, trail)}</ul>
+      </div>
       <div className={styles.controls}>
         <div className={styles.controls_item}>
           <label className={styles.controls_item_label}>{`Strength | ${Number(
@@ -95,31 +136,6 @@ function Lab2() {
             Plane.
           </button>
         </div>
-      </div>
-      <div className={styles.listContainer}>
-        <ul className={styles.listRoot}>
-          <li className={styles.listItem} key="3">
-            <img src="/onecup.jpg" alt="onecup sake" />
-            <p>
-              <span>三·</span>ワンカップ
-              <br />
-            </p>
-          </li>
-          <li className={styles.listItem} key="2">
-            <img src="/ramen.jpg" alt="good looking ramen" />
-            <p>
-              <span>二·</span>ラーメン
-              <br />
-            </p>
-          </li>
-          <li className={styles.listItem} key="1">
-            <img src="/curry.jpg" alt="japanese curry" />
-            <p>
-              <span>一·</span>カレー
-              <br />
-            </p>
-          </li>
-        </ul>
       </div>
       <ImageDistort
         styles={{ zIndex: -10 }}
