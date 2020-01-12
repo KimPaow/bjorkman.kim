@@ -31,17 +31,9 @@ export default function FadeInTranslate(props) {
   }
 
   useEffect(() => {
-    console.log("isloaded useeffect");
     setIsLoaded(true);
   }, []);
 
-  // useEffect(() => {
-  //   console.log("callback useeffect");
-  //   if (props.post_load) {
-  //     props.post_load();
-  //   }
-  // }, [props]);
-  console.log("repaint");
   return isLoaded
     ? trail.map((trailstyle, index) => {
         const child = props.children[index];
@@ -61,6 +53,5 @@ export default function FadeInTranslate(props) {
 
 FadeInTranslate.propTypes = {
   fade_matrix: PropTypes.bool,
-  fade_up: PropTypes.bool,
-  post_load: PropTypes.func
+  fade_up: PropTypes.bool
 };

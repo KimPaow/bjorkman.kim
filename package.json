@@ -16,7 +16,7 @@
     "react-dom": "^16.12.0",
     "react-ga": "^2.7.0",
     "react-icons": "^3.8.0",
-    "react-image-list-distort": "^1.0.31",
+    "react-image-list-distort": "^1.0.33",
     "react-input-slider": "^5.1.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",

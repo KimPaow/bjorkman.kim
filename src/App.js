@@ -2,17 +2,11 @@ import React, { Suspense } from "react";
 import { Router } from "react-router-dom";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
-// import DelayLink from "./components/delay-link";
 import LoadingSpinner from "./components/loading-spinner";
 import Layout from "./components/layout";
 import ROUTES, { RenderRoutes } from "./configs/routes";
 
-// const AnimationRoot = React.lazy(() => import("./components/animation-root"));
-// const Labs = React.lazy(() => import("./components/labs"));
-// const Work = React.lazy(() => import("./components/pages/work"));
-// const About = React.lazy(() => import("./components/pages/about"));
 const Header = React.lazy(() => import("./components/header"));
-
 const history = createBrowserHistory();
 
 ReactGA.initialize("UA-139665482-1");

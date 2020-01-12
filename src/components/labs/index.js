@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import LoadingSpinner from "../loading-spinner";
 import styles from "./labs.module.scss";
-import FadeInTranslate from "../animation-wrappers/fade-in-translate";
+
+const LoadingSpinner = React.lazy(() => import("../loading-spinner"));
+const FadeInTranslate = React.lazy(() =>
+  import("../animation-wrappers/fade-in-translate")
+);
 
 function Labs() {
   let { url } = useRouteMatch();

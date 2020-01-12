@@ -138,7 +138,7 @@ function Lab2() {
         </div>
       </div>
       <ImageDistort
-        styles={{ zIndex: -10 }}
+        styles={{ zIndex: -10, height: "100vh", width: "100vw" }}
         listRoot={`.${styles.listRoot}`}
         itemRoot={"li"}
         options={{

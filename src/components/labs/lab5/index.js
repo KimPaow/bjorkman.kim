@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./lab.module.scss";
 import useEventListener from "../../../utils/hooks/useEventListener";
-import FadeInTranslate from "../../animation-wrappers/fade-in-translate";
+
+const FadeInTranslate = React.lazy(() =>
+  import("../../animation-wrappers/fade-in-translate")
+);
 
 function Lab5() {
   const [isLoaded, setIsLoaded] = useState(false);

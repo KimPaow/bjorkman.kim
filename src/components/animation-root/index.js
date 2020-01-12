@@ -4,8 +4,11 @@ import { GoMarkGithub } from "react-icons/go";
 import { FaBitbucket } from "react-icons/fa";
 import { FaMedium } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import OrganicSphere from "../organic-sphere/organic-sphere";
 import { useTrail, animated } from "react-spring";
+
+const OrganicSphere = React.lazy(() =>
+  import("../organic-sphere/organic-sphere")
+);
 
 const AnimationRoot = props => {
   const [isLoaded, setIsLoaded] = useState(false);

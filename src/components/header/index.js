@@ -1,19 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "./header.module.scss";
-import Logo from "../logo";
+
+const Logo = React.lazy(() => import("../logo"));
+const AnimatedLink = React.lazy(() => import("../ui-components/animated-link"));
 
 const Header = props => {
   return (
     <>
       <Logo />
       <div className={styles.header}>
-        <Link to="/labs" className={styles.link}>
-          The lab.
-        </Link>
-        <Link className={styles.link} to="/about">
-          About.
-        </Link>
+        <AnimatedLink to="/labs">The lab.</AnimatedLink>
+        <AnimatedLink to="/about">About.</AnimatedLink>
       </div>
     </>
   );
