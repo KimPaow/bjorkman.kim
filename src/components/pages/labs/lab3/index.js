@@ -9,7 +9,7 @@ import {
 } from "postprocessing/build/postprocessing.min.js";
 import { Plane } from "./Plane";
 import styles from "./lab.module.scss";
-import HideInStateAndUp from "../../ui-components/hide-in-states";
+import HideInStateAndUp from "../../../ui-components/hide-in-states";
 
 class WaterEffect extends Component {
   constructor(props) {

@@ -3,11 +3,13 @@ import { useRouteMatch } from "react-router-dom";
 import Helmet from "react-helmet";
 import styles from "./labs.module.scss";
 
-const LoadingSpinner = React.lazy(() => import("../loading-spinner"));
+const LoadingSpinner = React.lazy(() => import("../../loading-spinner"));
 const FadeInTranslate = React.lazy(() =>
-  import("../animation-wrappers/fade-in-translate")
+  import("../../animation-wrappers/fade-in-translate")
 );
-const AnimatedLink = React.lazy(() => import("../ui-components/animated-link"));
+const AnimatedLink = React.lazy(() =>
+  import("../../ui-components/animated-link")
+);
 
 function Labs() {
   let { url } = useRouteMatch();

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import LoadingSpinner from "../../loading-spinner";
+import React from "react";
 import styles from "./lab1.module.scss";
 import mainImg1 from "./lab1-1.jpg";
 import mainImg2 from "./lab1-2.jpg";
@@ -8,8 +7,6 @@ import { Keyframes } from "react-spring/renderprops";
 import delay from "delay";
 
 function Lab1() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   const slides = [
     {
       mainImg: mainImg1,
@@ -67,11 +64,7 @@ function Lab1() {
     }
   });
 
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  return isLoaded ? (
+  return (
     <div className={styles.root}>
       <div className={styles.maincontent}>
         <div className={styles.hero_container}>
@@ -131,8 +124,6 @@ function Lab1() {
         </div>
       </div>
     </div>
-  ) : (
-    <LoadingSpinner />
   );
 }
 

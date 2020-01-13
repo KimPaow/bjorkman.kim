@@ -4,12 +4,12 @@ import { Route, Switch } from "react-router-dom";
 const Home = React.lazy(() => import("../components/pages/home"));
 const About = React.lazy(() => import("../components/pages/about"));
 const Work = React.lazy(() => import("../components/pages/work"));
-const Labs = React.lazy(() => import("../components/labs"));
-const Lab1 = React.lazy(() => import("../components/labs/lab1"));
-const Lab2 = React.lazy(() => import("../components/labs/lab2"));
-const Lab3 = React.lazy(() => import("../components/labs/lab3"));
-const Lab4 = React.lazy(() => import("../components/labs/lab4"));
-const Lab5 = React.lazy(() => import("../components/labs/lab5"));
+const Labs = React.lazy(() => import("../components/pages/labs"));
+const Lab1 = React.lazy(() => import("../components/pages/labs/lab1"));
+const Lab2 = React.lazy(() => import("../components/pages/labs/lab2"));
+const Lab3 = React.lazy(() => import("../components/pages/labs/lab3"));
+const Lab4 = React.lazy(() => import("../components/pages/labs/lab4"));
+const Lab5 = React.lazy(() => import("../components/pages/labs/lab5"));
 
 const ROUTES = [
   {

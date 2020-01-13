@@ -3,7 +3,7 @@ import styles from "./lab.module.scss";
 import ImageDistort from "react-image-list-distort";
 import Slider from "react-input-slider";
 import { useTrail, animated, config } from "react-spring";
-import HideInStateAndUp from "../../ui-components/hide-in-states";
+import HideInStateAndUp from "../../../ui-components/hide-in-states";
 
 function Lab2() {
   const [isLoaded, setIsLoaded] = useState(false);

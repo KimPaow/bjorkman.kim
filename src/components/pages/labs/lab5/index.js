@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import styles from "./lab.module.scss";
-import useEventListener from "../../../utils/hooks/useEventListener";
-import { lerp } from "../../../utils/helpers/animation";
+import useEventListener from "../../../../utils/hooks/useEventListener";
+import { lerp } from "../../../../utils/helpers/animation";
 
 const FadeInTranslate = React.lazy(() =>
-  import("../../animation-wrappers/fade-in-translate")
+  import("../../../animation-wrappers/fade-in-translate")
 );
 
 // start animation loop
