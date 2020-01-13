@@ -10,7 +10,7 @@
   font-weight: bold;
   background: $secondary-color;
   color: $main-color;
-  position: relative;
+  position: absolute;
   top: 2rem;
   left: 2rem;
   will-change: transform;
@@ -82,7 +82,7 @@
 }
 
 .logoContainer {
-  position: relative;
+  position: absolute;
 }
 
 .sfx_1 {
