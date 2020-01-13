@@ -93,12 +93,12 @@ function Lab5() {
       <section ref={refCallback} className={styles.contentContainer}>
         <FadeInTranslate fade_up>
           <h2 className={styles.headline}>Smooth Scrolling</h2>
-          <p className={styles.body}>
+          <p className={`${styles.body} ${styles.italic}`}>
             This component lerps the current scroll value, then uses the lerped
             value to transform the content. Try scrolling this page to see the
             effect, it's a very pleasant experience.
           </p>
-          <p className={styles.body}>
+          <p className={`${styles.body} ${styles.indent}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -106,7 +106,7 @@ function Lab5() {
             aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
             eos qui ratione voluptatem sequi nesciunt.
           </p>
-          <p className={styles.body}>
+          <p className={`${styles.body} ${styles.indent}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -126,7 +126,7 @@ function Lab5() {
             src={process.env.PUBLIC_URL + "/tokyo_pedestrians.jpg"}
             alt="a bowl of ramen, looks tasty!"
           />
-          <p className={styles.body}>
+          <p className={`${styles.body}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -142,7 +142,7 @@ function Lab5() {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-          <p className={styles.body}>
+          <p className={`${styles.body} ${styles.indent}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -158,7 +158,7 @@ function Lab5() {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-          <p className={styles.body}>
+          <p className={`${styles.body} ${styles.indent}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -174,7 +174,11 @@ function Lab5() {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-          <p className={styles.body}>
+          <img
+            src={process.env.PUBLIC_URL + "/curry.jpg"}
+            alt="a bowl of curry, looks tasty!"
+          />
+          <p className={`${styles.body}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -190,7 +194,7 @@ function Lab5() {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-          <p className={styles.body}>
+          <p className={`${styles.body} ${styles.indent}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -206,7 +210,7 @@ function Lab5() {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
-          <p className={styles.body}>
+          <p className={`${styles.body} ${styles.indent}`}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae

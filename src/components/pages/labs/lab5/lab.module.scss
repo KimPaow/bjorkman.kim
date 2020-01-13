@@ -15,7 +15,7 @@
   position: fixed;
   width: 100%;
   padding: 3rem;
-  max-width: 70rem;
+  max-width: 75rem;
   // transition: transform 0.05s ease;
   will-change: transform;
   box-sizing: border-box;
@@ -32,4 +32,13 @@
 
 .body {
   @include body;
+}
+
+.indent {
+  @include indent;
+}
+
+.italic {
+  font-style: italic;
+  margin-bottom: 6rem;
 }
