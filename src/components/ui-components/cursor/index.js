@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./cursor.module.scss";
 import useEventListener from "../../../utils/hooks/useEventListener";
-import { TweenMax, Power2 } from "gsap";
+import { gsap } from "gsap";
 import { ShowInStateAndUp } from "../hide-in-states";
 
 export default function Cursor(props) {
@@ -54,14 +54,15 @@ export default function Cursor(props) {
             Math.abs(historicClientY - clientY)
           ) / time;
 
-        TweenMax.set(innerCursor, {
+        gsap.set(innerCursor, {
           x: clientX,
           y: clientY
         });
-        TweenMax.to(outerCursor, 0.45, {
+        gsap.to(outerCursor, {
+          duration: 0.45,
           x: clientX,
           y: clientY,
-          ease: Power2.easeOut,
+          ease: "Power2.easeOut",
           transform: `rotateZ(${angleDeg}deg)`,
           width: !isSmall ? speed * 15 + 40 : speed * 20 + 60,
           height: !isSmall ? 40 : 60,
