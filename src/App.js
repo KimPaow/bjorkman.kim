@@ -47,11 +47,11 @@ function App() {
         <link rel="apple-touch-icon" href="/appletouch.png" />
       </Helmet>
       <Suspense fallback={<LoadingSpinner />}>
-        <Cursor />
         <Router history={history}>
           <Header />
           <RenderRoutes routes={ROUTES} />
         </Router>
+        <Cursor />
       </Suspense>
     </Layout>
   );

@@ -15,6 +15,7 @@
   top: -0.2rem;
   border-radius: 50%;
   z-index: 11000;
+  mix-blend-mode: exclusion;
   background: $secondary-color;
 }
 
@@ -25,6 +26,8 @@
   top: -1rem;
   border-radius: 50%;
   z-index: 10000;
-  border: 0.1rem solid $secondary-color;
+  // border: 0.1rem solid $secondary-color;
   box-sizing: border-box;
+  mix-blend-mode: exclusion;
+  background: $secondary-color;
 }
