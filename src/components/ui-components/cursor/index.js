@@ -5,11 +5,11 @@ import { gsap } from "gsap";
 import { ShowInStateAndUp } from "../hide-in-states";
 
 export default function Cursor(props) {
-  let prevClientX = 0;
-  let prevClientY = 0;
+  let prevClientX = -100;
+  let prevClientY = -100;
   // set the starting position of the cursor outside of the screen
-  let clientX = 0;
-  let clientY = 0;
+  let clientX = -100;
+  let clientY = 200;
   let isSmall = false;
   let angleDeg = 0;
 
