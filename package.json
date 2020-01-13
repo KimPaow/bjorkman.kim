@@ -5,7 +5,7 @@
   "dependencies": {
     "animejs": "^3.1.0",
     "delay": "^4.3.0",
-    "gsap": "^3.0.4",
+    "gsap": "^3.0.5",
     "history": "^4.10.1",
     "lerp": "^1.0.3",
     "node-sass": "^4.13.0",
