@@ -3,15 +3,12 @@ import styles from "./cursor.module.scss";
 import useEventListener from "../../../utils/hooks/useEventListener";
 import { TweenMax, Power2 } from "gsap";
 import { ShowInStateAndUp } from "../hide-in-states";
-import { useSpring, animated } from "react-spring";
 
 export default function Cursor(props) {
   // set the starting position of the cursor outside of the screen
   let clientX = -100;
   let clientY = -100;
-
-  const [greetingStatus, displayGreeting] = React.useState(false);
-  const [springProps, set, stop] = useSpring(() => ({ opacity: 1 }));
+  let isSmall = false;
 
   const handleMove = e => {
     clientX = e.clientX;
@@ -21,7 +18,10 @@ export default function Cursor(props) {
   useEventListener("mousemove", handleMove);
 
   const handleClick = e => {
-    console.log("click");
+    isSmall = !isSmall;
+    setTimeout(() => {
+      isSmall = !isSmall;
+    }, 100);
   };
 
   useEventListener("click", handleClick);
@@ -32,9 +32,6 @@ export default function Cursor(props) {
       let outerCursor = document.querySelector(`.${styles.cursor_outer}`);
 
       const render = () => {
-        // lastX = lerp(lastX, clientX, 0.2);
-        // lastY = lerp(lastY, clientY, 0.2);
-        // outerCursor.style.transform = `translate(${lastX}px, ${lastY}px)`;
         TweenMax.set(innerCursor, {
           x: clientX,
           y: clientY
@@ -42,7 +39,11 @@ export default function Cursor(props) {
         TweenMax.to(outerCursor, 0.55, {
           x: clientX,
           y: clientY,
-          ease: Power2.easeOut
+          ease: Power2.easeOut,
+          width: !isSmall ? "2rem" : "0.8rem",
+          height: !isSmall ? "2rem" : "0.8rem",
+          top: !isSmall ? "-1rem" : "-0.4rem",
+          left: !isSmall ? "-1rem" : "-0.4rem"
         });
 
         requestAnimationFrame(render);
@@ -51,7 +52,7 @@ export default function Cursor(props) {
     };
 
     initCursor();
-  }, [clientX, clientY]);
+  }, [clientX, clientY, isSmall]);
 
   return (
     <ShowInStateAndUp desktop={true}>
