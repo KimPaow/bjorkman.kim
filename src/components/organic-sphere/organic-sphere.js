@@ -40,22 +40,8 @@ export default class OrganicSphere extends Component {
     //ADD MATERIAL
     let material = new THREE.PointsMaterial({
       size: 0.01,
-      color: 0x555555
+      color: 0x676767
     });
-
-    //ADD LIGHT
-    let lightTop = new THREE.DirectionalLight(0xffffff, 0.7);
-    lightTop.position.set(0, 500, 200);
-    lightTop.castShadow = true;
-    this.scene.add(lightTop);
-
-    let lightBottom = new THREE.DirectionalLight(0xffffff, 0.25);
-    lightBottom.position.set(0, -500, 400);
-    lightBottom.castShadow = true;
-    this.scene.add(lightBottom);
-
-    let ambientLight = new THREE.AmbientLight(0x798296);
-    this.scene.add(ambientLight);
 
     //ADD OBJECT
     const geometry = new THREE.SphereGeometry(0.8, 128, 128);
