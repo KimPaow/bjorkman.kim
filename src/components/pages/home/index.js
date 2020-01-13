@@ -39,8 +39,8 @@ const Home = props => {
     config: trailConfig,
     opacity: isLoaded ? 1 : 0,
     transform: isLoaded
-      ? "matrix(1.00,0.00,0.00,1.00,0,0)"
-      : "matrix(0.82,-0.57,0.57,0.82,50,50)"
+      ? "matrix(1.00,0.00,0.00,1.00,0,0) translate3d(0, 0, 0)"
+      : "matrix(0.82,-0.57,0.57,0.82,50,50) translate3d(0, 0, 0)"
   });
 
   const createExpList = (children, trail) => {
