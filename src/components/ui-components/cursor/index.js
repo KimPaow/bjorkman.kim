@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./cursor.module.scss";
 import useEventListener from "../../../utils/hooks/useEventListener";
 import { TweenMax, Power2 } from "gsap";
+import { ShowInStateAndUp } from "../hide-in-states";
 
 export default function Cursor(props) {
   // set the starting position of the cursor outside of the screen
@@ -43,9 +44,9 @@ export default function Cursor(props) {
   }, [clientX, clientY]);
 
   return (
-    <>
+    <ShowInStateAndUp desktop={true}>
       <div className={`${styles.cursor} ${styles.cursor_small}`}></div>
       <div className={`${styles.cursor} ${styles.cursor_outer}`}></div>
-    </>
+    </ShowInStateAndUp>
   );
 }

@@ -1,0 +1,63 @@
+@import "../../../styles/vars.scss";
+@import "../../../styles/responsive.scss";
+@import "../../../styles/mixins.scss";
+
+.fallback {
+  display: block;
+  padding: 3rem;
+  width: calc(100% - 6rem);
+  text-align: center;
+  @include center($vertical: true, $horizontal: true);
+  @include body;
+  @include desktop {
+    display: none;
+  }
+}
+
+.hide_mobile {
+  @include mobile {
+    display: none;
+  }
+}
+
+.hide_tablet {
+  @include tablet {
+    display: none;
+  }
+}
+
+.hide_desktop {
+  @include desktop {
+    display: none;
+  }
+}
+
+.hide_widescreen {
+  @include wide-screen {
+    display: none;
+  }
+}
+
+.show_mobile {
+  @include mobile {
+    display: initial;
+  }
+}
+
+.show_tablet {
+  @include tablet {
+    display: initial;
+  }
+}
+
+.show_desktop {
+  @include desktop {
+    display: initial;
+  }
+}
+
+.show_widescreen {
+  @include wide-screen {
+    display: initial;
+  }
+}

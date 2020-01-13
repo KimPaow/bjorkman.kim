@@ -110,18 +110,6 @@
   }
 }
 
-.no_mobile {
-  display: block;
-  padding: 3rem;
-  width: calc(100% - 6rem);
-  text-align: center;
-  @include center($vertical: true, $horizontal: true);
-  @include body;
-  @include desktop {
-    display: none;
-  }
-}
-
 .listRoot {
   display: flex;
   max-width: 40rem;

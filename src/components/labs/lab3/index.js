@@ -9,6 +9,7 @@ import {
 } from "postprocessing/build/postprocessing.min.js";
 import { Plane } from "./Plane";
 import styles from "./lab.module.scss";
+import HideInStateAndUp from "../../ui-components/hide-in-states";
 
 class WaterEffect extends Component {
   constructor(props) {
@@ -159,9 +160,7 @@ class WaterEffect extends Component {
   render() {
     return (
       <>
-        <p className={styles.no_mobile}>
-          This lab is only available on desktop for now.
-        </p>
+        <HideInStateAndUp />
         <div
           className={styles.root}
           ref={mount => {

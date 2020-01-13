@@ -44,9 +44,14 @@ function Lab5() {
 
   useEventListener("scroll", handleScroll);
 
-  const setBodyHeight = () => {
-    documentHeight = contentEl.getBoundingClientRect().height + 150;
-    document.body.style.height = `${documentHeight / 10}rem`;
+  const setBodyHeight = reset => {
+    if (!reset) {
+      documentHeight = contentEl.getBoundingClientRect().height + 150;
+      document.body.style.height = `${documentHeight / 10}rem`;
+    }
+    if (reset) {
+      document.body.style.height = `100%`;
+    }
   };
 
   const handleResize = () => {
@@ -77,6 +82,10 @@ function Lab5() {
 
   useEffect(() => {
     initAnimationLoop();
+
+    return () => {
+      setBodyHeight(true);
+    };
   });
 
   return (
