@@ -25,11 +25,11 @@ const About = () => {
           <br />
           Interesting things.
         </h1>
-        <p className={styles.body}>
+        <p className={`${styles.body}`}>
           This is the home of Kim Björkman, the site serves as both a showcase
           and a place to experiment.
         </p>
-        <p className={styles.body}>
+        <p className={`${styles.body} ${styles.indent}`}>
           A painter turned VFX/3D artist, turned graphic designer, turned
           backend developer, turned frontend developer. Kim tries to shape a
           multi-disciplinary background into highly polished digital

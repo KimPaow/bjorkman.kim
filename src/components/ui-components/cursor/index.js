@@ -3,18 +3,28 @@ import styles from "./cursor.module.scss";
 import useEventListener from "../../../utils/hooks/useEventListener";
 import { TweenMax, Power2 } from "gsap";
 import { ShowInStateAndUp } from "../hide-in-states";
+import { useSpring, animated } from "react-spring";
 
 export default function Cursor(props) {
   // set the starting position of the cursor outside of the screen
   let clientX = -100;
   let clientY = -100;
 
-  const onMove = e => {
+  const [greetingStatus, displayGreeting] = React.useState(false);
+  const [springProps, set, stop] = useSpring(() => ({ opacity: 1 }));
+
+  const handleMove = e => {
     clientX = e.clientX;
     clientY = e.clientY;
   };
 
-  useEventListener("mousemove", onMove);
+  useEventListener("mousemove", handleMove);
+
+  const handleClick = e => {
+    console.log("click");
+  };
+
+  useEventListener("click", handleClick);
 
   useEffect(() => {
     const initCursor = () => {

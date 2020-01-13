@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./animation-root.module.scss";
+import styles from "./home.module.scss";
 import { GoMarkGithub } from "react-icons/go";
 import { FaBitbucket } from "react-icons/fa";
 import { FaMedium } from "react-icons/fa";
@@ -7,10 +7,10 @@ import { MdEmail } from "react-icons/md";
 import { useTrail, animated } from "react-spring";
 
 const OrganicSphere = React.lazy(() =>
-  import("../organic-sphere/organic-sphere")
+  import("../../organic-sphere/organic-sphere")
 );
 
-const AnimationRoot = props => {
+const Home = props => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const children = [
@@ -66,4 +66,4 @@ const AnimationRoot = props => {
   ) : null;
 };
 
-export default AnimationRoot;
+export default Home;

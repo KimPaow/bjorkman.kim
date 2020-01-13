@@ -11,3 +11,7 @@
 .body {
   @include body;
 }
+
+.indent {
+  @include indent;
+}

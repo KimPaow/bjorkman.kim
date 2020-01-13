@@ -39,11 +39,7 @@ export default function FadeInTranslate(props) {
         const child = props.children[index];
         const AnimatedChild = animated(child.type);
         return (
-          <AnimatedChild
-            style={trailstyle}
-            className={child.props.className}
-            key={index}
-          >
+          <AnimatedChild style={trailstyle} key={index} {...child.props}>
             {child.props.children}
           </AnimatedChild>
         );

@@ -122,6 +122,10 @@ function Lab5() {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </p>
+          <img
+            src={process.env.PUBLIC_URL + "/tokyo_pedestrians.jpg"}
+            alt="a bowl of ramen, looks tasty!"
+          />
           <p className={styles.body}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa

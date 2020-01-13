@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-const AnimationRoot = React.lazy(() => import("../components/animation-root"));
+const Home = React.lazy(() => import("../components/pages/home"));
 const About = React.lazy(() => import("../components/pages/about"));
 const Work = React.lazy(() => import("../components/pages/work"));
 const Labs = React.lazy(() => import("../components/labs"));
@@ -21,7 +21,7 @@ const ROUTES = [
         path: "/",
         key: "APP_INDEX",
         exact: true,
-        component: () => <AnimationRoot />
+        component: () => <Home />
       },
       {
         path: "/about",
