@@ -66,6 +66,7 @@ export default class OrganicSphere extends Component {
     this.start();
     if (typeof window !== `undefined`) {
       window.addEventListener("mousemove", this.mouseMove);
+      window.addEventListener("touchmove", this.touchMove);
     }
     this.setState({
       isLoaded: true
@@ -73,6 +74,10 @@ export default class OrganicSphere extends Component {
   }
 
   componentWillUnmount() {
+    if (typeof window !== `undefined`) {
+      window.removeEventListener("mousemove", this.mouseMove);
+      window.removeEventListener("touchmove", this.touchMove);
+    }
     this.stop();
     this.mount.removeChild(this.renderer.domElement);
   }
@@ -129,6 +134,11 @@ export default class OrganicSphere extends Component {
   };
 
   mouseMove = e => {
+    this.mouseX = e.clientX - this.horizontalCenter;
+    this.mouseY = e.clientY - this.verticalCenter;
+  };
+
+  touchMove = e => {
     this.mouseX = e.clientX - this.horizontalCenter;
     this.mouseY = e.clientY - this.verticalCenter;
   };
