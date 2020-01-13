@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import styles from "./about.module.scss";
 
 const FadeInTranslate = React.lazy(() =>
-  import("../../animation-wrappers/fade-in-translate")
+  import("../../animation-components/fade-in-translate")
 );
 const LoadingSpinner = React.lazy(() => import("../../loading-spinner"));
 
