@@ -85,10 +85,9 @@ function Lab5() {
         <FadeInTranslate fade_up>
           <h2 className={styles.headline}>Smooth Scrolling</h2>
           <p className={styles.body}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            This component lerps the current scroll value, then uses the lerped
+            value to transform the content. Try scrolling this page to see the
+            effect, it's a very pleasant experience.
           </p>
           <p className={styles.body}>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
