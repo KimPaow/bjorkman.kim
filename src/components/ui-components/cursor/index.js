@@ -8,8 +8,8 @@ export default function Cursor(props) {
   let prevClientX = 0;
   let prevClientY = 0;
   // set the starting position of the cursor outside of the screen
-  let clientX = -100;
-  let clientY = -100;
+  let clientX = 0;
+  let clientY = 0;
   let isSmall = false;
   let angleDeg = 0;
 
@@ -58,15 +58,15 @@ export default function Cursor(props) {
           x: clientX,
           y: clientY
         });
-        TweenMax.to(outerCursor, 0.55, {
+        TweenMax.to(outerCursor, 0.45, {
           x: clientX,
           y: clientY,
           ease: Power2.easeOut,
           transform: `rotateZ(${angleDeg}deg)`,
-          width: !isSmall ? `${speed * 1.5 + 4}rem` : `${speed * 2 + 6}rem`,
-          height: !isSmall ? "4rem" : "6rem",
-          top: !isSmall ? "-2rem" : "-3rem",
-          left: !isSmall ? "-2rem" : "-3rem"
+          width: !isSmall ? speed * 15 + 40 : speed * 20 + 60,
+          height: !isSmall ? 40 : 60,
+          top: !isSmall ? -20 : -30,
+          left: !isSmall ? -20 : -30
         });
 
         requestAnimationFrame(render);
