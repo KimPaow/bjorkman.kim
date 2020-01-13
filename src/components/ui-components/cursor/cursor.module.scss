@@ -1,0 +1,30 @@
+@import "../../../styles/vars.scss";
+@import "../../../styles/mixins.scss";
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.cursor_small {
+  width: 0.4rem;
+  height: 0.4rem;
+  left: -0.2rem;
+  top: -0.2rem;
+  border-radius: 50%;
+  z-index: 11000;
+  background: $secondary-color;
+}
+
+.cursor_outer {
+  width: 2rem;
+  height: 2rem;
+  left: -1rem;
+  top: -1rem;
+  border-radius: 50%;
+  z-index: 10000;
+  border: 0.1rem solid $secondary-color;
+  box-sizing: border-box;
+  // opacity: 0.3;
+}

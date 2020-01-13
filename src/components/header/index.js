@@ -13,10 +13,10 @@ const Header = props => {
     <>
       <Logo />
       <div className={styles.header}>
-        <AnimatedLink style={linkStyle} to="/labs">
+        <AnimatedLink data-sticky-cursor style={linkStyle} to="/labs">
           The lab.
         </AnimatedLink>
-        <AnimatedLink style={linkStyle} to="/about">
+        <AnimatedLink data-sticky-cursor style={linkStyle} to="/about">
           About.
         </AnimatedLink>
       </div>

@@ -1,9 +1,18 @@
 @import-normalize;
 @import "./styles/vars.scss";
 
+* {
+  cursor: none;
+
+  &:hover {
+    cursor: none;
+  }
+}
+
 :root {
   font-size: 62.5%;
 }
+
 body,
 html {
   margin: 0px;
