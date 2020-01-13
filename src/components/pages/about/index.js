@@ -21,9 +21,10 @@ const About = () => {
       </Helmet>
       <FadeInTranslate fade_matrix>
         <h1 className={styles.headline}>
-          Reactive things.
-          <br />
-          Interesting things.
+          <FadeInTranslate fade_matrix>
+            <div>Reactive things.</div>
+            <div>Interesting things.</div>
+          </FadeInTranslate>
         </h1>
         <p className={`${styles.body}`}>
           This is the home of Kim Björkman, the site serves as both a showcase
