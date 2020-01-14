@@ -1,0 +1,6 @@
+@import "../../../styles/responsive.scss";
+
+.scroll_container {
+  position: fixed;
+  will-change: transform;
+}

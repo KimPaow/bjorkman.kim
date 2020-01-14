@@ -12,12 +12,9 @@
 }
 
 .contentContainer {
-  position: fixed;
   width: 100%;
   padding: 3rem;
   max-width: 75rem;
-  // transition: transform 0.05s ease;
-  will-change: transform;
   box-sizing: border-box;
   margin: 5rem auto;
 
