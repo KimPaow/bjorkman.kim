@@ -8,7 +8,7 @@
     "gsap": "^3.0.5",
     "history": "^4.10.1",
     "lerp": "^1.0.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "pixi.js": "^5.2.0",
     "postprocessing": "^6.9.0",
     "prop-types": "^15.7.2",
