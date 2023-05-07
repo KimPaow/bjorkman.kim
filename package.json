@@ -20,7 +20,7 @@
     "react-image-list-distort": "^1.0.33",
     "react-input-slider": "^5.1.4",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0",
+    "react-scripts": "^5.0.1",
     "react-spring": "^8.0.27",
     "react-three-fiber": "^3.0.17",
     "simplex-noise": "^2.4.0",
